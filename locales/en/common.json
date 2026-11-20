@@ -1,0 +1,479 @@
+{
+  "locale": {
+    "code": "en",
+    "name": "English",
+    "variant": "English"
+  },
+  "brand": {
+    "name": "Mozambique Renewable Energy Venture",
+    "shortName": "MREV",
+    "tagline": "Clean energy. Sustainable future.",
+    "workingNameNotice": "Working public name, subject to legal and commercial approval.",
+    "statusNotice": "Registration, local office, supplier approval, pricing, warranty and contact information must be verified before final publication."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "solutions": "Solutions",
+    "biogas": "Biogas and Clean Cooking",
+    "solar": "Solar Home Systems",
+    "biofertilizer": "Biofertilizer",
+    "wastewater": "Wastewater Treatment",
+    "who": "Who We Serve",
+    "products": "Products",
+    "partnerships": "Partnerships",
+    "impact": "Impact",
+    "resources": "Resources",
+    "faq": "Frequently Asked Questions",
+    "articles": "Articles",
+    "contact": "Contact",
+    "whistleblowing": "Whistleblowing",
+    "whistleblowingOverview": "Overview",
+    "whistleblowingNew": "New submission",
+    "whistleblowingFollowUp": "Follow up",
+    "menu": "Open menu",
+    "team": "Team"
+  },
+  "actions": {
+    "exploreSolutions": "Explore solutions",
+    "contactUs": "Contact us",
+    "requestAssessment": "Request a site assessment",
+    "whatsapp": "Chat on WhatsApp",
+    "readMore": "Read more",
+    "askSolar": "Ask about solar options",
+    "discussPartnership": "Discuss a partnership",
+    "consultation": "Request a consultation",
+    "send": "Send request",
+    "viewResources": "View resources",
+    "goHome": "Go home"
+  },
+  "topbar": {
+    "serviceArea": "Initial focus: Tete Province, with potential national reach",
+    "hours": "Monday to Friday, business hours",
+    "phone": "Phone/WhatsApp pending confirmation"
+  },
+  "footer": {
+    "about": "Mozambique-focused venture in development for renewable energy, clean cooking and circular agriculture.",
+    "quickLinks": "Quick links",
+    "solutions": "Solutions",
+    "contactTitle": "Contact",
+    "contactPending": "Email, phone, address and legal details will be published only after verification.",
+    "privacy": "Privacy",
+    "legal": "Legal notice",
+    "rights": "All rights reserved.",
+    "credit": "developed by TalentBridge Technologies +263783462251"
+  },
+  "forms": {
+    "subject": "Subject",
+    "name": "Name",
+    "phone": "Phone/WhatsApp",
+    "email": "Email",
+    "province": "Province",
+    "district": "District",
+    "siteType": "Site type",
+    "livestock": "Livestock or organic feedstock type",
+    "feedstockQty": "Approximate quantity available",
+    "waterAccess": "Water access",
+    "currentFuel": "Current fuel",
+    "intendedUsers": "Intended users",
+    "stage": "Project stage",
+    "lightingNeeds": "Lighting/charging needs",
+    "productInterest": "Product interest",
+    "paymentPreference": "Payment preference, if locally available",
+    "organisation": "Organisation",
+    "sector": "Sector",
+    "proposedProject": "Proposed project",
+    "targetUsers": "Target users",
+    "timeline": "Expected timeline",
+    "message": "Message",
+    "consent": "I agree to be contacted about this request and understand that the data will be used only for follow-up.",
+    "honeypot": "Leave this field empty",
+    "success": "Thank you. Your request has been sent.",
+    "generalTitle": "General enquiry",
+    "biogasTitle": "Biogas assessment",
+    "solarTitle": "Solar enquiry",
+    "partnerTitle": "Partnership enquiry"
+  },
+  "pages": {
+    "home": {
+      "metaTitle": "Mozambique Renewable Energy Venture | Clean energy for a better future",
+      "metaDescription": "Biogas, solar home system and biofertilizer solutions for households, farmers, institutions and partners in Mozambique.",
+      "heroEyebrow": "Clean energy. Sustainable future.",
+      "heroTitle": "Clean energy for a better future.",
+      "heroText": "Biogas and solar energy solutions for households, farmers, businesses and communities in Mozambique.",
+      "solutionsKicker": "Practical solutions",
+      "solutionsTitle": "Appropriate technologies for energy, organic waste and agriculture",
+      "whyKicker": "Why choose us",
+      "whyTitle": "An approach shaped by technical assessment, training and follow-up",
+      "whyText": "Every project starts with the real site: available resources, operating capacity, energy needs, water, safety and maintenance planning.",
+      "serveKicker": "Who we serve",
+      "serveTitle": "Clear pathways for different users",
+      "circularKicker": "Circular energy",
+      "circularTitle": "From organic waste to energy and biofertilizer",
+      "circularText": "A circular model can improve waste management and support agriculture when technical and operating conditions are suitable.",
+      "impactKicker": "Impact and partnerships",
+      "impactTitle": "Intended contributions to sustainable development",
+      "impactText": "Impact measurement should begin with verified baselines. Public metrics should be published only when results are confirmed.",
+      "finalTitle": "Let’s develop clean energy solutions together.",
+      "finalText": "Share your location, needs and project stage so we can assess the right next step.",
+      "solutionCards": [
+        {
+          "title": "Biogas and Clean Cooking",
+          "text": "Biodigesters that convert organic waste, including animal manure, into biogas and biofertilizer.",
+          "icon": "fa-recycle",
+          "image": "img-600x400-4.jpg",
+          "href": "biogas.html"
+        },
+        {
+          "title": "Solar Home Systems",
+          "text": "Essential energy for lighting and mobile-phone charging in areas with limited grid access.",
+          "icon": "fa-solar-panel",
+          "image": "img-600x400-1.jpg",
+          "href": "solar.html"
+        },
+        {
+          "title": "Biofertilizer and Sustainable Agriculture",
+          "text": "Responsible use of digestate to support soils, crops and livelihoods.",
+          "icon": "fa-seedling",
+          "image": "img-600x400-5.jpg",
+          "href": "biofertilizer.html"
+        },
+        {
+          "title": "Onsite wastewater treatment plants",
+          "text": "Wastewater treatment systems for homes, residential developments, institutions, farms, and commercial and industrial facilities.",
+          "icon": "fa-water",
+          "image": "img-600x400-6.jpg",
+          "href": "wastewater-treatment.html"
+        }
+      ],
+      "whyItems": [
+        "Practical regional experience with biogas and solar solutions in Southern Africa.",
+        "Site assessment before recommending technology, size or investment.",
+        "User training, after-sales planning and operating follow-up.",
+        "Careful communication: no savings, yield or impact claims without verification."
+      ],
+      "serveCards": [
+        {
+          "title": "Households",
+          "text": "Lighting, phone charging and clean-cooking options where conditions are suitable."
+        },
+        {
+          "title": "Farmers and livestock enterprises",
+          "text": "Manure management, energy for cooking or simple processes and responsible biofertilizer use."
+        },
+        {
+          "title": "Schools and institutions",
+          "text": "Projects with training, maintenance and monitoring from early design."
+        },
+        {
+          "title": "NGOs and businesses",
+          "text": "Programme co-design, technical assessment, reporting and follow-up cycles."
+        }
+      ],
+      "circularSteps": [
+        "Organic waste",
+        "Biodigester",
+        "Biogas",
+        "Biofertilizer",
+        "Crops and livelihoods"
+      ],
+      "sdgs": [
+        "SDG 2",
+        "SDG 3",
+        "SDG 5",
+        "SDG 7",
+        "SDG 8",
+        "SDG 12",
+        "SDG 13",
+        "SDG 17"
+      ]
+    },
+    "about": {
+      "metaTitle": "About Us | Mozambique Renewable Energy Venture",
+      "metaDescription": "Mission, vision, regional experience and delivery approach for renewable energy, clean cooking and circular agriculture in Mozambique.",
+      "title": "Regional experience. Local commitment.",
+      "intro": "We are a venture dedicated to expanding access to renewable energy, clean cooking and sustainable agriculture in Mozambique.",
+      "storyTitle": "Our approach",
+      "story": "The proposal draws on practical experience delivering biogas and solar solutions in Southern Africa while adapting carefully to the Mozambican market. Every implementation should respect local conditions, operating capacity, user training and technical support.",
+      "missionTitle": "Mission",
+      "mission": "Enable access to clean, affordable and sustainable energy solutions that improve livelihoods and support local economic development.",
+      "visionTitle": "Vision",
+      "vision": "A Mozambique where households, farmers, businesses and institutions can harness local resources for a more sustainable energy future.",
+      "valuesTitle": "Values",
+      "values": [
+        "Technical fit",
+        "Transparency",
+        "Practical training",
+        "Follow-up",
+        "Responsible partnerships"
+      ],
+      "credentialsTitle": "Verified credentials",
+      "credentials": "Only confirmed credentials, supplier authorisations, case studies and contacts should be published. References to Lanforce or Zimbabwe experience should be approved by the project owner."
+    },
+    "solutions": {
+      "metaTitle": "Solutions | Biogas, solar and biofertilizer",
+      "metaDescription": "Biogas, solar home systems, biofertilizer and institutional project solutions for Mozambique.",
+      "title": "Solutions for clean energy and circular economy",
+      "intro": "The right recommendation depends on the site, available resources, energy needs and maintenance capacity.",
+      "processTitle": "How we assess a solution",
+      "process": [
+        "Understand the user and site",
+        "Verify resources, water, safety and operation",
+        "Select appropriate technology and scale",
+        "Train users and define support",
+        "Monitor results and maintenance"
+      ],
+      "institutionalTitle": "Institutional projects",
+      "institutionalText": "Schools, community facilities, CSR programmes and development partners can combine technical assessment, funding, training and monitoring."
+    },
+    "wastewater": {
+      "metaTitle": "Onsite Wastewater Treatment Plants | Lanforce",
+      "metaDescription": "Onsite wastewater treatment systems designed and installed for homes, developments, institutions, farms and businesses.",
+      "title": "Onsite wastewater treatment plants",
+      "intro": "At Lanforce, we design and install wastewater treatment systems for homes, residential developments, institutions, farms, commercial and industrial institutions.",
+      "whatWeDoTitle": "What we do",
+      "services": [
+        "Biodigester systems",
+        "Anaerobic Baffled Reactors (ABRs)",
+        "Membrane bioreactor (MBR) systems",
+        "Engineered leach fields",
+        "Filtration and disinfection systems",
+        "Treated water storage and reuse",
+        "Wastewater systems upgrades and maintenance"
+      ],
+      "ctaTitle": "Planning a wastewater treatment project?",
+      "ctaText": "Tell us about your site and requirements so we can discuss a suitable system."
+    },
+    "biogas": {
+      "metaTitle": "Biogas and Clean Cooking | Technical assessment",
+      "metaDescription": "How biodigesters convert organic waste into biogas and biofertilizer, with assessment of feedstock, water, safety and maintenance.",
+      "title": "Turning organic waste into energy",
+      "intro": "Organic waste, including animal manure, can be converted through biodigesters into biogas for cooking and biofertilizer for agricultural use.",
+      "howTitle": "How it works",
+      "how": [
+        "Organic material and water enter the biodigester.",
+        "Anaerobic digestion produces biogas.",
+        "Biogas can support clean cooking when pressure, safety and volume are suitable.",
+        "Digestate must be handled correctly before agricultural use."
+      ],
+      "requirementsTitle": "What we assess",
+      "requirements": [
+        "Feedstock type and quantity",
+        "Water availability",
+        "Energy demand",
+        "Site conditions",
+        "Daily operating capacity",
+        "Safety, ventilation and maintenance"
+      ],
+      "applicationsTitle": "Possible applications",
+      "applications": [
+        "Households with sufficient organic material",
+        "Communities and schools",
+        "Dairies, piggeries and livestock enterprises",
+        "Institutions with predictable organic waste"
+      ],
+      "safetyTitle": "Safety and maintenance",
+      "safety": "Installation should follow technical guidance, proper ventilation, user training and regular checks. Benefits depend on real site conditions and correct use."
+    },
+    "solar": {
+      "metaTitle": "Solar Home Systems | Lighting and charging",
+      "metaDescription": "Solar home systems for lighting and mobile-phone charging in areas with limited grid access.",
+      "title": "More light. More possibilities.",
+      "intro": "Solar home systems can provide essential energy services, including household lighting and mobile-phone charging, in areas with limited grid access.",
+      "selectionTitle": "How we choose a system",
+      "selection": "Recommendations should consider real needs, verified product capacity, warranty, local availability, support and approved payment terms.",
+      "productsTitle": "Products for approval",
+      "productsNotice": "The cards below are prepared for products such as Spark 10/20 or approved alternatives. Specifications, pricing, warranties and payment plans must come from supplier documentation before final publication.",
+      "products": [
+        {
+          "name": "Spark 10",
+          "use": "Basic lighting and simple charging",
+          "status": "Specifications and warranty pending approval"
+        },
+        {
+          "name": "Spark 20",
+          "use": "Higher capacity for households with several lighting and charging needs",
+          "status": "Availability and local terms pending confirmation"
+        }
+      ]
+    },
+    "biofertilizer": {
+      "metaTitle": "Biofertilizer and Sustainable Agriculture",
+      "metaDescription": "Biodigester digestate, proper handling and possible agricultural benefits without guaranteed yield claims.",
+      "title": "Biofertilizer for circular agriculture",
+      "intro": "Digestate generated by biodigesters can support a circular agriculture approach when handled, stored and applied correctly.",
+      "pathwayTitle": "Digestate pathway",
+      "pathway": [
+        "Separation or storage according to technical guidance",
+        "Application in doses suitable for soil and crop",
+        "Monitoring crop response",
+        "Recording practices for learning and improvement"
+      ],
+      "benefitsTitle": "Possible benefits",
+      "benefits": [
+        "Productive use of waste",
+        "Support for soil fertility",
+        "Reduced organic waste",
+        "Integration between energy and agriculture"
+      ],
+      "caution": "Yield, productivity or savings guarantees should not be published. Results depend on soil, crop, climate, dosage and farm management."
+    },
+    "who": {
+      "metaTitle": "Who We Serve | Households, farmers, institutions and partners",
+      "metaDescription": "Segments served by biogas, solar home system, biofertilizer and institutional project solutions in Mozambique.",
+      "title": "Solutions adapted to the user",
+      "intro": "Each segment has different needs, risks and feasibility criteria.",
+      "segments": [
+        {
+          "title": "Rural and peri-urban households",
+          "needs": "Lighting, charging, clean cooking and simple support.",
+          "solutions": "Solar home systems and biogas where sufficient feedstock is available."
+        },
+        {
+          "title": "Farmers and livestock enterprises",
+          "needs": "Waste management, thermal energy and improved agricultural practices.",
+          "solutions": "Biodigesters, biofertilizer and operating monitoring."
+        },
+        {
+          "title": "Schools and community facilities",
+          "needs": "Safe solutions, training, maintenance and accountability.",
+          "solutions": "Institutional projects with assessment, installation and follow-up."
+        },
+        {
+          "title": "NGOs, businesses and partners",
+          "needs": "Scalable programmes, due diligence and measurable outcomes.",
+          "solutions": "Co-design, implementation, M1/M2/M3 monitoring and reporting."
+        }
+      ]
+    },
+    "products": {
+      "metaTitle": "Products | Renewable energy products",
+      "metaDescription": "Available renewable-energy products with current pricing, availability and product details.",
+      "title": "Products",
+      "intro": "Browse available products, current prices and availability.",
+      "empty": "No products have been published yet."
+    },
+    "partnerships": {
+      "metaTitle": "Partnerships | Energy and organic-waste programmes",
+      "metaDescription": "Partnership models, due diligence, installation, M1/M2/M3 monitoring and institutional enquiry.",
+      "title": "Working together to expand energy access",
+      "intro": "We seek to collaborate with institutions, development organisations and businesses to assess, implement and monitor clean-energy and sustainable organic-waste management projects.",
+      "modelsTitle": "Collaboration models",
+      "models": [
+        "Programme co-design",
+        "Technical assessment and due diligence",
+        "Installation and training",
+        "Post-installation follow-up",
+        "Reporting for funders and partners"
+      ],
+      "monitoringTitle": "Monitoring cycles",
+      "monitoring": [
+        {
+          "label": "M1",
+          "text": "Initial verification of installation, training and use."
+        },
+        {
+          "label": "M2",
+          "text": "Review of operation, maintenance and user challenges."
+        },
+        {
+          "label": "M3",
+          "text": "Results, learning and recommendations for scale."
+        }
+      ],
+      "funding": "Funding routes, grants or future carbon finance should be treated as conditional opportunities, not guaranteed revenue."
+    },
+    "impact": {
+      "metaTitle": "Impact | Measurement and SDGs",
+      "metaDescription": "Theory of change, baseline, verification and intended SDG contributions in energy, health, agriculture and climate.",
+      "title": "Impact measured with care",
+      "intro": "The impact page should separate intent, activity and verified results.",
+      "theoryTitle": "Theory of change",
+      "theory": "When households, farmers and institutions can access appropriate technologies, training and support, they can improve energy services, waste management and agricultural practices.",
+      "baselineTitle": "Baseline and verification",
+      "baseline": [
+        "Record conditions before intervention",
+        "Define simple, verifiable indicators",
+        "Confirm use, maintenance and satisfaction",
+        "Publish only approved results"
+      ],
+      "carbonTitle": "Climate finance",
+      "carbon": "Future carbon revenue should be communicated only as a possibility conditional on eligibility, methodology, verification and approval."
+    },
+    "resources": {
+      "metaTitle": "Resources | FAQs, guides and approved literature",
+      "metaDescription": "Frequently asked questions, approved brochures, guides, case studies and the policy for translated articles.",
+      "title": "Resources for informed decisions",
+      "intro": "This area should receive approved materials, rights-cleared photography and reviewed content in Portuguese and English.",
+      "faqTitle": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "Does biogas work in every home?",
+          "answer": "No. Feedstock, water, space, safety and daily operating capacity must be assessed."
+        },
+        {
+          "question": "Do solar systems replace the electricity grid?",
+          "answer": "Small home systems are usually suited to essential services such as lighting and charging, according to product capacity."
+        },
+        {
+          "question": "Are savings or yield increases guaranteed?",
+          "answer": "No guarantees should be made without verified data. Results depend on context and correct use."
+        }
+      ],
+      "downloadsTitle": "Materials to publish",
+      "downloads": [
+        "Approved technical brochures",
+        "Assessment questionnaires",
+        "Maintenance guides",
+        "Consented photographs and videos",
+        "Authorised case studies"
+      ],
+      "articlesTitle": "Articles and translations",
+      "articles": "Dynamic articles should live in a database with translations by locale, not in interface JSON files."
+    },
+    "faq": {
+      "metaTitle": "Frequently Asked Questions | Mozambique Renewable Energy Venture",
+      "metaDescription": "Frequently asked questions about biogas, solar systems, savings and project assessment.",
+      "title": "Frequently asked questions",
+      "intro": "Answers to common questions about appropriate renewable-energy solutions and project assessment."
+    },
+    "articles": {
+      "metaTitle": "Articles | Mozambique Renewable Energy Venture",
+      "metaDescription": "Published articles and updates about renewable energy, biogas, solar systems and circular agriculture.",
+      "title": "Articles",
+      "intro": "Published articles and updates from the team.",
+      "empty": "No articles have been published yet."
+    },
+    "article": {
+      "metaTitle": "Article | Mozambique Renewable Energy Venture",
+      "metaDescription": "Read a published article from Mozambique Renewable Energy Venture.",
+      "title": "Article",
+      "intro": "Read the full article.",
+      "missing": "Article slug is missing.",
+      "notFound": "Article not found.",
+      "backToArticles": "Back to articles"
+    },
+    "contact": {
+      "metaTitle": "Contact | Request assessment or partnership",
+      "metaDescription": "Contact the team for a biogas assessment, solar enquiry, institutional partnership or general request.",
+      "title": "Contact us",
+      "intro": "Send a request with your location, needs and project stage. Phone, email and address will be published only once verified.",
+      "whatsappNotice": "The WhatsApp Business number must be confirmed by the project owner before launch.",
+      "privacyNotice": "We collect only the data needed to respond to the request and route the lead to the right owner.",
+      "locationTitle": "Our location",
+      "mapTitle": "Location map",
+      "mapDirections": "Open in Google Maps"
+    },
+    "team": {
+      "metaTitle": "Our team",
+      "metaDescription": "Meet our team and learn about the people and culture behind our work.",
+      "title": "Our team",
+      "eyebrow": "Our people",
+      "introTitle": "Our team and culture",
+      "intro": "Meet the people behind our work.",
+      "empty": "Team profiles will be published soon.",
+      "error": "We could not load the team. Please try again later.",
+      "cultureIntro": "We believe in collaboration, integrity and continuous learning. Together, we work towards practical, sustainable energy solutions for the communities we serve."
+    }
+  }
+}

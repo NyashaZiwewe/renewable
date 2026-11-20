@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Contacto | Solicitar avaliação ou parceria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacte a equipa para avaliação de biogás, consulta solar, parceria institucional ou pedido geral.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/pt/contacto.html">
+    <link rel="alternate" hreflang="pt" href="https://example.com/pt/contacto.html">
+    <link rel="alternate" hreflang="en" href="https://example.com/en/contact.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.com/pt/contacto.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body data-locale="pt" data-locale-root="../locales" data-page-key="contact" data-active-parent="contact" data-alt-pt="../pt/contacto.html" data-alt-en="../en/contact.html">
+    <div data-site-partial="header" data-site-partial-src="header.html"></div>
+    <section class="container-fluid page-header py-5 mb-5" style="background-image: url('../img/carousel-2.jpg')">
+        <div class="container py-5">
+            <h1 class="display-4 mb-3">Contacte-nos</h1>
+            <p class="fs-5 mb-0">Envie um pedido com a sua localização, necessidades e fase do projecto. Publicaremos telefone, email e endereço apenas depois de verificados.</p>
+        </div>
+    </section>
+    <main>
+        <section class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h2>A nossa localização</h2>
+                        <p data-company-map-label>Mozambique</p>
+                        <iframe class="contact-location-map" data-company-map src="https://www.google.com/maps?q=Mozambique&amp;output=embed" title="Mapa da localização" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        <a class="d-inline-block mt-3 mb-4" data-company-map-directions href="https://www.google.com/maps/search/?api=1&amp;query=Mozambique" target="_blank" rel="noopener noreferrer">Abrir no Google Maps <i class="fa fa-external-link-alt ms-1" aria-hidden="true"></i></a>
+                        <h3 class="h5">Falar no WhatsApp</h3>
+                        <p data-company-whatsapp-notice>O número de WhatsApp Business deve ser confirmado pelo proprietário do projecto antes do lançamento.</p>
+                        <a class="btn btn-primary py-3 px-5" href="#" data-company-link="whatsapp" data-i18n="actions.whatsapp">Falar no WhatsApp</a>
+                        <div class="notice mt-4">Recolhemos apenas dados necessários para responder ao pedido e encaminhar o contacto ao responsável adequado.</div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-panel p-4 p-lg-5">
+        <h2>Pedido geral</h2>
+        <form data-lead-form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-md-6">
+        <label class="form-label" for="generalTitle-subject">Assunto</label>
+        <input class="form-control" id="generalTitle-subject" name="subject" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="generalTitle-name">Nome</label>
+        <input class="form-control" id="generalTitle-name" name="name" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="generalTitle-phone">Telefone/WhatsApp</label>
+        <input class="form-control" id="generalTitle-phone" name="phone" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="generalTitle-email">Email</label>
+        <input class="form-control" id="generalTitle-email" name="email" type="email" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="generalTitle-province">Província</label>
+        <input class="form-control" id="generalTitle-province" name="province" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="generalTitle-district">Distrito</label>
+        <input class="form-control" id="generalTitle-district" name="district" type="text" required>
+    </div><div class="col-12">
+        <label class="form-label" for="generalTitle-message">Mensagem</label>
+        <textarea class="form-control" id="generalTitle-message" name="message" rows="4" required></textarea>
+    </div>
+                <div class="col-12 d-none">
+                    <label for="generalTitle-company">Deixe este campo vazio</label>
+                    <input id="generalTitle-company" name="company" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" id="generalTitle-consent" name="consent" type="checkbox" required>
+                        <label class="form-check-label" for="generalTitle-consent">Aceito ser contactado sobre este pedido e compreendo que os dados serão usados apenas para seguimento.</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary py-3 px-5" type="submit" data-i18n="actions.send">Enviar pedido</button>
+                </div>
+                <div class="col-12">
+                    <p class="form-response mb-0" tabindex="-1" hidden data-i18n="forms.success">Obrigado. O seu pedido foi enviado.</p>
+                </div>
+            </div>
+        </form>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="assessment" class="container-fluid bg-light py-5">
+            <div class="container">
+                <div class="form-panel p-4 p-lg-5">
+        <h2>Avaliação de biogás</h2>
+        <form data-lead-form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-md-6">
+        <label class="form-label" for="biogasTitle-subject">Assunto</label>
+        <input class="form-control" id="biogasTitle-subject" name="subject" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-name">Nome</label>
+        <input class="form-control" id="biogasTitle-name" name="name" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-phone">Telefone/WhatsApp</label>
+        <input class="form-control" id="biogasTitle-phone" name="phone" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-province">Província</label>
+        <input class="form-control" id="biogasTitle-province" name="province" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-district">Distrito</label>
+        <input class="form-control" id="biogasTitle-district" name="district" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-siteType">Tipo de local</label>
+        <input class="form-control" id="biogasTitle-siteType" name="siteType" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-livestock">Tipo de gado ou matéria orgânica</label>
+        <input class="form-control" id="biogasTitle-livestock" name="livestock" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-feedstockQty">Quantidade aproximada disponível</label>
+        <input class="form-control" id="biogasTitle-feedstockQty" name="feedstockQty" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-waterAccess">Acesso à água</label>
+        <input class="form-control" id="biogasTitle-waterAccess" name="waterAccess" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-currentFuel">Combustível actualmente usado</label>
+        <input class="form-control" id="biogasTitle-currentFuel" name="currentFuel" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-intendedUsers">Utilizadores previstos</label>
+        <input class="form-control" id="biogasTitle-intendedUsers" name="intendedUsers" type="text" required>
+    </div><div class="col-md-6">
+        <label class="form-label" for="biogasTitle-stage">Fase do projecto</label>
+        <input class="form-control" id="biogasTitle-stage" name="stage" type="text" required>
+    </div>
+                <div class="col-12 d-none">
+                    <label for="biogasTitle-company">Deixe este campo vazio</label>
+                    <input id="biogasTitle-company" name="company" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" id="biogasTitle-consent" name="consent" type="checkbox" required>
+                        <label class="form-check-label" for="biogasTitle-consent">Aceito ser contactado sobre este pedido e compreendo que os dados serão usados apenas para seguimento.</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary py-3 px-5" type="submit" data-i18n="actions.send">Enviar pedido</button>
+                </div>
+                <div class="col-12">
+                    <p class="form-response mb-0" tabindex="-1" hidden data-i18n="forms.success">Obrigado. O seu pedido foi enviado.</p>
+                </div>
+            </div>
+        </form>
+    </div>
+            </div>
+        </section>
+    </main>
+    <div data-site-partial="footer" data-site-partial-src="footer.html"></div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/i18next@23.16.8/dist/umd/i18next.min.js" defer></script>
+    <script src="../js/config.js" defer></script>
+    <script src="../js/site-i18n.js" defer></script>
+    
+    
+    
+</body>
+</html>

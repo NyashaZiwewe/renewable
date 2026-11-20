@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://example.com/pt/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/" />
+  </url>
+  <url>
+    <loc>https://example.com/en/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/equipa.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/equipa.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/team.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/equipa.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/team.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/equipa.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/team.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/equipa.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/sobre.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/sobre.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/sobre.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/about.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/sobre.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/sobre.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/solucoes.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/solucoes.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/solutions.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/solucoes.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/solutions.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/solucoes.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/solutions.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/solucoes.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/biogas.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/biogas.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/biogas.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/biogas.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/biogas.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/biogas.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/biogas.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/biogas.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/solar.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/solar.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/solar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/solar.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/solar.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/solar.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/solar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/solar.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/biofertilizante.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/biofertilizante.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/biofertilizer.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/biofertilizante.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/biofertilizer.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/biofertilizante.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/biofertilizer.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/biofertilizante.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/tratamento-de-aguas-residuais.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/tratamento-de-aguas-residuais.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/wastewater-treatment.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/tratamento-de-aguas-residuais.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/wastewater-treatment.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/tratamento-de-aguas-residuais.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/wastewater-treatment.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/tratamento-de-aguas-residuais.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/quem-servimos.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/quem-servimos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/who-we-serve.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/quem-servimos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/who-we-serve.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/quem-servimos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/who-we-serve.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/quem-servimos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/produtos.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/produtos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/products.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/produtos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/products.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/produtos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/products.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/produtos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/parcerias.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/parcerias.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/partnerships.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/parcerias.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/partnerships.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/parcerias.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/partnerships.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/parcerias.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/impacto.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/impacto.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/impact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/impacto.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/impact.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/impacto.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/impact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/impacto.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/recursos.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/recursos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/resources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/recursos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/resources.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/recursos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/resources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/recursos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/perguntas-frequentes.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/perguntas-frequentes.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/frequently-asked-questions.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/perguntas-frequentes.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/frequently-asked-questions.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/perguntas-frequentes.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/frequently-asked-questions.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/perguntas-frequentes.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/artigos.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/artigos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/articles.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/artigos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/articles.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/artigos.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/articles.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/artigos.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/artigo.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/artigo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/article.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/artigo.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/article.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/artigo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/article.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/artigo.html" />
+  </url>
+  <url>
+    <loc>https://example.com/pt/contacto.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/contacto.html" />
+  </url>
+  <url>
+    <loc>https://example.com/en/contact.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://example.com/pt/contacto.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/pt/contacto.html" />
+  </url>
+</urlset>

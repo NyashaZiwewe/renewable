@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS faq_content (
+    locale VARCHAR(2) PRIMARY KEY,
+    payload LONGTEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

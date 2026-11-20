@@ -1,0 +1,8 @@
+.env
+node_modules/
+data/*.json
+!data/.gitkeep
+
+data/faqs-*.lock
+
+data/admin-accounts.lock

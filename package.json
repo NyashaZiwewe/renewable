@@ -1,0 +1,12 @@
+{
+  "name": "renewable-admin-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "create-admin": "php api/create-admin.php",
+    "generate": "node scripts/generate-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Articles admin | Mozambique Renewable Energy Venture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard" data-admin-page="articles">
+    <header class="admin-topbar">
+        <div>
+            <p class="auth-kicker">Admin</p>
+            <h1>Articles</h1>
+        </div>
+        <div class="admin-session">
+            <nav class="admin-nav" aria-label="Admin navigation">
+                <a class="active" href="articles.html">Articles</a>
+                <a href="products.html">Products</a>
+                <a href="leads.html">Queries</a>
+                <a href="change-password.html">Password</a>
+            </nav>
+            <span id="adminEmail"></span>
+            <a class="btn btn-outline-primary btn-sm" href="../en/articles.html" target="_blank" rel="noopener">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+                View site
+            </a>
+            <button id="logoutButton" class="btn btn-dark btn-sm" type="button">
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                Log out
+            </button>
+        </div>
+    </header>
+
+    <main class="admin-layout">
+        <section class="admin-card editor-card" aria-labelledby="editor-title">
+            <div class="section-heading">
+                <div>
+                    <p class="auth-kicker">Editor</p>
+                    <h2 id="editor-title">New article</h2>
+                </div>
+                <button id="newArticleButton" class="btn btn-outline-primary btn-sm" type="button">
+                    <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                    New
+                </button>
+            </div>
+
+            <form id="articleForm" class="admin-form" novalidate>
+                <input id="articleId" name="articleId" type="hidden">
+                <div class="form-grid">
+                    <div>
+                        <label for="locale">Language</label>
+                        <select id="locale" name="locale" required>
+                            <option value="en">English</option>
+                            <option value="pt">Portuguese</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required>
+                            <option value="draft">Draft</option>
+                            <option value="published">Published</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" maxlength="160" required>
+
+                <label for="slug">Slug</label>
+                <input id="slug" name="slug" type="text" maxlength="140" required>
+
+                <label for="summary">Summary</label>
+                <textarea id="summary" name="summary" rows="3" maxlength="500"></textarea>
+
+                <label for="coverImageFile">Picture</label>
+                <div class="image-upload-control">
+                    <input id="coverImageFile" type="file" accept="image/jpeg,image/png,image/gif,image/webp">
+                    <input id="imageUrl" name="imageUrl" type="text" placeholder="/img/example.jpg or https://...">
+                </div>
+                <div id="imagePreview" class="image-preview" aria-live="polite"></div>
+
+                <label for="content">Article body</label>
+                <textarea id="content" name="content" rows="13" required></textarea>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="bi bi-save" aria-hidden="true"></i>
+                        Save article
+                    </button>
+                    <button id="deleteArticleButton" class="btn btn-outline-danger" type="button" hidden>
+                        <i class="bi bi-trash" aria-hidden="true"></i>
+                        Delete
+                    </button>
+                </div>
+                <p id="articleStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <aside class="admin-stack">
+            <section class="admin-card" aria-labelledby="list-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="auth-kicker">Content</p>
+                        <h2 id="list-title">Saved articles</h2>
+                    </div>
+                    <button id="refreshButton" class="btn btn-outline-primary btn-sm" type="button">
+                        <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                        Refresh
+                    </button>
+                </div>
+                <div id="articlesList" class="article-list" aria-live="polite"></div>
+            </section>
+        </aside>
+    </main>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js" defer></script>
+    <script src="../js/config.js" defer></script>
+    <script src="../js/admin.js" defer></script>
+</body>
+</html>

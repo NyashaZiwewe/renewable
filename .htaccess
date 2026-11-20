@@ -1,0 +1,6 @@
+Options -Indexes
+<FilesMatch "^(\.env|\.env\.example|package(-lock)?\.json)$">
+    Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteRule ^(data|docs|migrations|node_modules|scripts|\.git|\.idea)(/|$) - [F,L,NC]

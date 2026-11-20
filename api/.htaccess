@@ -1,0 +1,8 @@
+Options -Indexes
+<FilesMatch "^(lib|create-admin)\.php$">
+    Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

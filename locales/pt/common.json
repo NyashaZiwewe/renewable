@@ -1,0 +1,479 @@
+{
+  "locale": {
+    "code": "pt",
+    "name": "Português",
+    "variant": "Português de Moçambique"
+  },
+  "brand": {
+    "name": "Energia Renovável Moçambique",
+    "shortName": "ERM",
+    "tagline": "Energia limpa. Futuro sustentável.",
+    "workingNameNotice": "Nome público de trabalho, sujeito a aprovação legal e comercial.",
+    "statusNotice": "As informações sobre registo, escritório local, fornecedores, preços, garantias e contactos devem ser verificadas antes da publicação final."
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre nós",
+    "solutions": "Soluções",
+    "biogas": "Biogás e cozinha limpa",
+    "solar": "Sistemas solares domésticos",
+    "biofertilizer": "Biofertilizante",
+    "wastewater": "Tratamento de águas residuais",
+    "who": "Quem servimos",
+    "products": "Produtos",
+    "partnerships": "Parcerias",
+    "impact": "Impacto",
+    "resources": "Recursos",
+    "faq": "Perguntas frequentes",
+    "articles": "Artigos",
+    "contact": "Contacto",
+    "whistleblowing": "Denúncia confidencial",
+    "whistleblowingOverview": "Informações",
+    "whistleblowingNew": "Nova denúncia",
+    "whistleblowingFollowUp": "Acompanhar denúncia",
+    "menu": "Abrir menu",
+    "team": "Equipa"
+  },
+  "actions": {
+    "exploreSolutions": "Explorar soluções",
+    "contactUs": "Contacte-nos",
+    "requestAssessment": "Solicitar avaliação do local",
+    "whatsapp": "Falar no WhatsApp",
+    "readMore": "Saber mais",
+    "askSolar": "Perguntar sobre opções solares",
+    "discussPartnership": "Discutir parceria",
+    "consultation": "Solicitar consulta",
+    "send": "Enviar pedido",
+    "viewResources": "Ver recursos",
+    "goHome": "Ir para o início"
+  },
+  "topbar": {
+    "serviceArea": "Foco inicial: Província de Tete, com potencial alcance nacional",
+    "hours": "Segunda a sexta, horário comercial",
+    "phone": "Telefone/WhatsApp pendente de confirmação"
+  },
+  "footer": {
+    "about": "Empresa moçambicana em desenvolvimento para energia renovável, cozinha limpa e agricultura circular.",
+    "quickLinks": "Ligações rápidas",
+    "solutions": "Soluções",
+    "contactTitle": "Contacto",
+    "contactPending": "Email, telefone, endereço e dados legais serão publicados apenas depois de verificados.",
+    "privacy": "Privacidade",
+    "legal": "Aviso legal",
+    "rights": "Todos os direitos reservados.",
+    "credit": "developed by TalentBridge Technologies +263783462251"
+  },
+  "forms": {
+    "subject": "Assunto",
+    "name": "Nome",
+    "phone": "Telefone/WhatsApp",
+    "email": "Email",
+    "province": "Província",
+    "district": "Distrito",
+    "siteType": "Tipo de local",
+    "livestock": "Tipo de gado ou matéria orgânica",
+    "feedstockQty": "Quantidade aproximada disponível",
+    "waterAccess": "Acesso à água",
+    "currentFuel": "Combustível actualmente usado",
+    "intendedUsers": "Utilizadores previstos",
+    "stage": "Fase do projecto",
+    "lightingNeeds": "Necessidades de iluminação/carregamento",
+    "productInterest": "Produto de interesse",
+    "paymentPreference": "Preferência de pagamento, se disponível localmente",
+    "organisation": "Organização",
+    "sector": "Sector",
+    "proposedProject": "Projecto proposto",
+    "targetUsers": "Utilizadores alvo",
+    "timeline": "Prazo previsto",
+    "message": "Mensagem",
+    "consent": "Aceito ser contactado sobre este pedido e compreendo que os dados serão usados apenas para seguimento.",
+    "honeypot": "Deixe este campo vazio",
+    "success": "Obrigado. O seu pedido foi enviado.",
+    "generalTitle": "Pedido geral",
+    "biogasTitle": "Avaliação de biogás",
+    "solarTitle": "Consulta solar",
+    "partnerTitle": "Pedido de parceria"
+  },
+  "pages": {
+    "home": {
+      "metaTitle": "Energia Renovável Moçambique | Energia limpa para um futuro melhor",
+      "metaDescription": "Soluções de biogás, energia solar doméstica e biofertilizante para famílias, agricultores, instituições e parceiros em Moçambique.",
+      "heroEyebrow": "Energia limpa. Futuro sustentável.",
+      "heroTitle": "Energia limpa para um futuro melhor.",
+      "heroText": "Soluções de biogás e energia solar para famílias, agricultores, empresas e comunidades em Moçambique.",
+      "solutionsKicker": "Soluções práticas",
+      "solutionsTitle": "Tecnologias adequadas para energia, resíduos orgânicos e agricultura",
+      "whyKicker": "Porquê escolher-nos",
+      "whyTitle": "Uma abordagem orientada por avaliação técnica, formação e acompanhamento",
+      "whyText": "Cada projecto começa com a realidade do local: recursos disponíveis, capacidade de operação, necessidades de energia, água, segurança e plano de manutenção.",
+      "serveKicker": "Quem servimos",
+      "serveTitle": "Caminhos claros para diferentes utilizadores",
+      "circularKicker": "Energia circular",
+      "circularTitle": "Do resíduo orgânico à energia e ao biofertilizante",
+      "circularText": "O modelo circular pode melhorar a gestão de resíduos e apoiar a produção agrícola, quando as condições técnicas e operacionais são adequadas.",
+      "impactKicker": "Impacto e parcerias",
+      "impactTitle": "Contribuições pretendidas para desenvolvimento sustentável",
+      "impactText": "A medição de impacto deve partir de linhas de base verificadas. Métricas públicas só devem ser publicadas quando houver resultados confirmados.",
+      "finalTitle": "Vamos desenvolver soluções de energia limpa em conjunto.",
+      "finalText": "Partilhe a sua localização, necessidades e fase do projecto para avaliarmos o próximo passo adequado.",
+      "solutionCards": [
+        {
+          "title": "Biogás e cozinha limpa",
+          "text": "Biodigestores para transformar resíduos orgânicos, incluindo estrume animal, em biogás e biofertilizante.",
+          "icon": "fa-recycle",
+          "image": "img-600x400-4.jpg",
+          "href": "biogas.html"
+        },
+        {
+          "title": "Sistemas solares domésticos",
+          "text": "Energia essencial para iluminação e carregamento de telemóveis em zonas com acesso limitado à rede.",
+          "icon": "fa-solar-panel",
+          "image": "img-600x400-1.jpg",
+          "href": "solar.html"
+        },
+        {
+          "title": "Biofertilizante e agricultura sustentável",
+          "text": "Aproveitamento responsável do digestato para apoiar solos, culturas e meios de subsistência.",
+          "icon": "fa-seedling",
+          "image": "img-600x400-5.jpg",
+          "href": "biofertilizante.html"
+        },
+        {
+          "title": "Estações de tratamento de águas residuais no local",
+          "text": "Sistemas de tratamento de águas residuais para habitações, empreendimentos residenciais, instituições, explorações agrícolas e instalações comerciais e industriais.",
+          "icon": "fa-water",
+          "image": "img-600x400-6.jpg",
+          "href": "tratamento-de-aguas-residuais.html"
+        }
+      ],
+      "whyItems": [
+        "Experiência prática regional em soluções de biogás e energia solar no sul de África.",
+        "Avaliação do local antes de recomendar tecnologia, dimensão ou investimento.",
+        "Formação de utilizadores, planeamento pós-venda e acompanhamento operacional.",
+        "Comunicação prudente: sem promessas de poupança, produtividade ou impacto sem verificação."
+      ],
+      "serveCards": [
+        {
+          "title": "Famílias",
+          "text": "Iluminação, carregamento de telemóveis e opções de cozinha limpa quando houver condições adequadas."
+        },
+        {
+          "title": "Agricultores e pecuária",
+          "text": "Gestão de estrume, energia para cozinha ou processos simples e uso responsável de biofertilizante."
+        },
+        {
+          "title": "Escolas e instituições",
+          "text": "Projectos com formação, manutenção e monitoria desde o desenho inicial."
+        },
+        {
+          "title": "ONGs e empresas",
+          "text": "Co-desenho de programas, avaliação técnica, relatórios e ciclos de acompanhamento."
+        }
+      ],
+      "circularSteps": [
+        "Resíduo orgânico",
+        "Biodigestor",
+        "Biogás",
+        "Biofertilizante",
+        "Culturas e meios de vida"
+      ],
+      "sdgs": [
+        "ODS 2",
+        "ODS 3",
+        "ODS 5",
+        "ODS 7",
+        "ODS 8",
+        "ODS 12",
+        "ODS 13",
+        "ODS 17"
+      ]
+    },
+    "about": {
+      "metaTitle": "Sobre nós | Energia Renovável Moçambique",
+      "metaDescription": "Missão, visão, experiência regional e abordagem de entrega para energia renovável, cozinha limpa e agricultura circular em Moçambique.",
+      "title": "Experiência regional. Compromisso local.",
+      "intro": "Somos uma iniciativa dedicada a expandir o acesso à energia renovável, cozinha limpa e agricultura sustentável em Moçambique.",
+      "storyTitle": "A nossa abordagem",
+      "story": "A proposta combina experiência prática em soluções de biogás e energia solar no sul de África com compromisso de adaptação ao mercado moçambicano. Cada implementação deve respeitar condições locais, capacidade de operação, formação de utilizadores e suporte técnico.",
+      "missionTitle": "Missão",
+      "mission": "Facilitar o acesso a soluções de energia limpa, acessíveis e sustentáveis que melhorem os meios de subsistência e apoiem o desenvolvimento económico local.",
+      "visionTitle": "Visão",
+      "vision": "Um Moçambique onde famílias, agricultores, empresas e instituições possam aproveitar recursos locais para um futuro energético mais sustentável.",
+      "valuesTitle": "Valores",
+      "values": [
+        "Adequação técnica",
+        "Transparência",
+        "Formação prática",
+        "Acompanhamento",
+        "Parcerias responsáveis"
+      ],
+      "credentialsTitle": "Credenciais verificadas",
+      "credentials": "Apenas credenciais, autorizações de fornecedor, estudos de caso e contactos confirmados devem ser publicados. Referências a Lanforce ou a experiência no Zimbabwe devem ser aprovadas pelo proprietário do projecto."
+    },
+    "solutions": {
+      "metaTitle": "Soluções | Biogás, solar e biofertilizante",
+      "metaDescription": "Soluções de biogás, sistemas solares domésticos, biofertilizante e projectos institucionais para Moçambique.",
+      "title": "Soluções para energia limpa e economia circular",
+      "intro": "A recomendação correcta depende do local, recursos disponíveis, necessidades de energia e capacidade de manutenção.",
+      "processTitle": "Como avaliamos uma solução",
+      "process": [
+        "Compreender o utilizador e o local",
+        "Verificar recursos, água, segurança e operação",
+        "Seleccionar tecnologia e dimensão adequadas",
+        "Formar utilizadores e definir suporte",
+        "Monitorar resultados e manutenção"
+      ],
+      "institutionalTitle": "Projectos institucionais",
+      "institutionalText": "Escolas, unidades comunitárias, programas de responsabilidade social e parceiros de desenvolvimento podem combinar avaliação técnica, financiamento, formação e monitoria."
+    },
+    "wastewater": {
+      "metaTitle": "Estações de tratamento de águas residuais no local | Lanforce",
+      "metaDescription": "Sistemas de tratamento de águas residuais concebidos e instalados para habitações, empreendimentos, instituições, explorações agrícolas e empresas.",
+      "title": "Estações de tratamento de águas residuais no local",
+      "intro": "Na Lanforce, concebemos e instalamos sistemas de tratamento de águas residuais para habitações, empreendimentos residenciais, instituições, explorações agrícolas e instalações comerciais e industriais.",
+      "whatWeDoTitle": "O que fazemos",
+      "services": [
+        "Sistemas de biodigestores",
+        "Reactores anaeróbios de chicanas (ABR)",
+        "Sistemas de biorreactores de membrana (MBR)",
+        "Campos de infiltração projectados",
+        "Sistemas de filtração e desinfecção",
+        "Armazenamento e reutilização de água tratada",
+        "Actualização e manutenção de sistemas de águas residuais"
+      ],
+      "ctaTitle": "Está a planear um projecto de tratamento de águas residuais?",
+      "ctaText": "Partilhe informações sobre o local e os requisitos para conversarmos sobre um sistema adequado."
+    },
+    "biogas": {
+      "metaTitle": "Biogás e cozinha limpa | Avaliação técnica",
+      "metaDescription": "Como biodigestores transformam resíduos orgânicos em biogás e biofertilizante, com avaliação de matéria-prima, água, segurança e manutenção.",
+      "title": "Transformar resíduo orgânico em energia",
+      "intro": "Resíduos orgânicos, incluindo estrume animal, podem ser convertidos por biodigestores em biogás para cozinha e biofertilizante para uso agrícola.",
+      "howTitle": "Como funciona",
+      "how": [
+        "Matéria orgânica e água entram no biodigestor.",
+        "A digestão anaeróbia produz biogás.",
+        "O biogás pode apoiar cozinha limpa quando a pressão, segurança e volume forem adequados.",
+        "O digestato deve ser manuseado correctamente antes de uso agrícola."
+      ],
+      "requirementsTitle": "O que avaliamos",
+      "requirements": [
+        "Tipo e quantidade de matéria-prima",
+        "Disponibilidade de água",
+        "Demanda de energia",
+        "Condições do local",
+        "Capacidade de operação diária",
+        "Segurança, ventilação e manutenção"
+      ],
+      "applicationsTitle": "Aplicações possíveis",
+      "applications": [
+        "Famílias com matéria orgânica suficiente",
+        "Comunidades e escolas",
+        "Dairies, piggeries e explorações pecuárias",
+        "Instituições com resíduos orgânicos previsíveis"
+      ],
+      "safetyTitle": "Segurança e manutenção",
+      "safety": "A instalação deve seguir orientação técnica, ventilação adequada, formação de utilizadores e inspeções regulares. Benefícios dependem das condições reais do local e do uso correcto."
+    },
+    "solar": {
+      "metaTitle": "Sistemas solares domésticos | Iluminação e carregamento",
+      "metaDescription": "Sistemas solares domésticos para iluminação e carregamento de telemóveis em áreas com acesso limitado à rede.",
+      "title": "Mais luz. Mais possibilidades.",
+      "intro": "Sistemas solares domésticos podem fornecer serviços essenciais de energia, incluindo iluminação e carregamento de telemóveis, em zonas com acesso limitado à rede.",
+      "selectionTitle": "Como escolhemos o sistema",
+      "selection": "A recomendação deve considerar necessidades reais, capacidade verificada do produto, garantia, disponibilidade local, assistência e formas de pagamento aprovadas.",
+      "productsTitle": "Produtos para aprovação",
+      "productsNotice": "Os cartões abaixo são espaços preparados para produtos como Spark 10/20 ou alternativas aprovadas. Especificações, preços, garantias e planos de pagamento devem vir de documentação do fornecedor antes da publicação final.",
+      "products": [
+        {
+          "name": "Spark 10",
+          "use": "Iluminação básica e carregamento simples",
+          "status": "Especificações e garantia pendentes de aprovação"
+        },
+        {
+          "name": "Spark 20",
+          "use": "Maior capacidade para famílias com várias necessidades de luz e carregamento",
+          "status": "Disponibilidade e termos locais pendentes de confirmação"
+        }
+      ]
+    },
+    "biofertilizer": {
+      "metaTitle": "Biofertilizante e agricultura sustentável",
+      "metaDescription": "Digestato de biodigestores, manuseamento adequado e possíveis benefícios agrícolas sem garantias de produtividade.",
+      "title": "Biofertilizante para agricultura circular",
+      "intro": "O digestato gerado em biodigestores pode apoiar uma abordagem de agricultura circular quando for manuseado, armazenado e aplicado correctamente.",
+      "pathwayTitle": "Caminho do digestato",
+      "pathway": [
+        "Separação ou armazenamento conforme orientação técnica",
+        "Aplicação em doses adequadas ao solo e cultura",
+        "Monitoria de resposta das culturas",
+        "Registo de práticas para aprendizagem e melhoria"
+      ],
+      "benefitsTitle": "Possíveis benefícios",
+      "benefits": [
+        "Aproveitamento produtivo de resíduos",
+        "Apoio à fertilidade do solo",
+        "Redução de desperdício orgânico",
+        "Integração entre energia e agricultura"
+      ],
+      "caution": "Não se devem publicar garantias de rendimento, produtividade ou poupança. Resultados dependem do solo, cultura, clima, dosagem e gestão agrícola."
+    },
+    "who": {
+      "metaTitle": "Quem servimos | Famílias, agricultores, instituições e parceiros",
+      "metaDescription": "Segmentos atendidos por soluções de biogás, energia solar doméstica, biofertilizante e projectos institucionais em Moçambique.",
+      "title": "Soluções adaptadas ao utilizador",
+      "intro": "Cada segmento tem necessidades, riscos e critérios de viabilidade diferentes.",
+      "segments": [
+        {
+          "title": "Famílias rurais e periurbanas",
+          "needs": "Iluminação, carregamento, cozinha limpa e assistência simples.",
+          "solutions": "Sistemas solares domésticos e biogás onde houver matéria-prima suficiente."
+        },
+        {
+          "title": "Agricultores e pecuária",
+          "needs": "Gestão de resíduos, energia térmica e melhoria de práticas agrícolas.",
+          "solutions": "Biodigestores, biofertilizante e monitoria de operação."
+        },
+        {
+          "title": "Escolas e equipamentos comunitários",
+          "needs": "Soluções seguras, formação, manutenção e prestação de contas.",
+          "solutions": "Projectos institucionais com avaliação, instalação e acompanhamento."
+        },
+        {
+          "title": "ONGs, empresas e parceiros",
+          "needs": "Programas escaláveis, due diligence e resultados mensuráveis.",
+          "solutions": "Co-desenho, implementação, monitoria M1/M2/M3 e relatórios."
+        }
+      ]
+    },
+    "products": {
+      "metaTitle": "Produtos | Produtos de energia renovável",
+      "metaDescription": "Produtos de energia renovável disponíveis com preços actuais, disponibilidade e detalhes.",
+      "title": "Produtos",
+      "intro": "Consulte produtos disponíveis, preços actuais e disponibilidade.",
+      "empty": "Ainda nao ha produtos publicados."
+    },
+    "partnerships": {
+      "metaTitle": "Parcerias | Programas de energia e resíduos orgânicos",
+      "metaDescription": "Modelos de parceria, due diligence, instalação, monitoria M1/M2/M3 e consulta institucional.",
+      "title": "Trabalhar em conjunto para expandir o acesso à energia",
+      "intro": "Procuramos colaborar com instituições, organizações de desenvolvimento e empresas para avaliar, implementar e monitorar projectos de energia limpa e gestão sustentável de resíduos orgânicos.",
+      "modelsTitle": "Modelos de colaboração",
+      "models": [
+        "Co-desenho de programas",
+        "Avaliação técnica e due diligence",
+        "Instalação e formação",
+        "Acompanhamento pós-instalação",
+        "Relatórios para financiadores e parceiros"
+      ],
+      "monitoringTitle": "Ciclos de monitoria",
+      "monitoring": [
+        {
+          "label": "M1",
+          "text": "Verificação inicial de instalação, formação e uso."
+        },
+        {
+          "label": "M2",
+          "text": "Revisão de operação, manutenção e desafios dos utilizadores."
+        },
+        {
+          "label": "M3",
+          "text": "Resultados, aprendizagem e recomendações para escala."
+        }
+      ],
+      "funding": "Rotas de financiamento, subsídios ou carbono futuro devem ser tratadas como oportunidades condicionais, não como receitas garantidas."
+    },
+    "impact": {
+      "metaTitle": "Impacto | Medição e ODS",
+      "metaDescription": "Teoria de mudança, linha de base, verificação e contribuições pretendidas para ODS em energia, saúde, agricultura e clima.",
+      "title": "Impacto medido com prudência",
+      "intro": "A página de impacto deve separar intenção, actividade e resultados verificados.",
+      "theoryTitle": "Teoria de mudança",
+      "theory": "Quando famílias, agricultores e instituições têm acesso a tecnologias adequadas, formação e suporte, podem melhorar serviços de energia, gestão de resíduos e práticas agrícolas.",
+      "baselineTitle": "Linha de base e verificação",
+      "baseline": [
+        "Registar a situação antes da intervenção",
+        "Definir indicadores simples e verificáveis",
+        "Confirmar uso, manutenção e satisfação",
+        "Publicar apenas resultados aprovados"
+      ],
+      "carbonTitle": "Financiamento climático",
+      "carbon": "Receitas futuras de carbono só devem ser comunicadas como possibilidade condicionada a elegibilidade, metodologia, verificação e aprovação."
+    },
+    "resources": {
+      "metaTitle": "Recursos | FAQs, guias e literatura aprovada",
+      "metaDescription": "Perguntas frequentes, brochuras aprovadas, guias, estudos de caso e política para artigos traduzidos.",
+      "title": "Recursos para decisão informada",
+      "intro": "Esta área deve receber materiais aprovados, fotografias com direitos confirmados e conteúdos revistos em português e inglês.",
+      "faqTitle": "Perguntas frequentes",
+      "faqs": [
+        {
+          "question": "O biogás funciona em qualquer casa?",
+          "answer": "Não. É necessário avaliar matéria-prima, água, espaço, segurança e capacidade de operação diária."
+        },
+        {
+          "question": "Os sistemas solares substituem a rede eléctrica?",
+          "answer": "Sistemas domésticos pequenos são normalmente indicados para serviços essenciais, como luz e carregamento, conforme a capacidade do produto."
+        },
+        {
+          "question": "Há garantias de poupança ou aumento de produção?",
+          "answer": "Não devem ser prometidas garantias sem dados verificados. Resultados dependem do contexto e uso correcto."
+        }
+      ],
+      "downloadsTitle": "Materiais a publicar",
+      "downloads": [
+        "Brochuras técnicas aprovadas",
+        "Questionários de avaliação",
+        "Guias de manutenção",
+        "Fotografias e vídeos com consentimento",
+        "Estudos de caso autorizados"
+      ],
+      "articlesTitle": "Artigos e traduções",
+      "articles": "Artigos dinâmicos devem ficar numa base de dados com traduções por idioma, não nos ficheiros JSON da interface."
+    },
+    "faq": {
+      "metaTitle": "Perguntas frequentes | Energia Renovável Moçambique",
+      "metaDescription": "Perguntas frequentes sobre biogás, sistemas solares, poupança e avaliação de projectos.",
+      "title": "Perguntas frequentes",
+      "intro": "Respostas a perguntas comuns sobre soluções de energia renovável adequadas e avaliação de projectos."
+    },
+    "articles": {
+      "metaTitle": "Artigos | Energia Renovável Moçambique",
+      "metaDescription": "Artigos e actualizações publicados sobre energia renovável, biogás, sistemas solares e agricultura circular.",
+      "title": "Artigos",
+      "intro": "Artigos e actualizações publicados pela equipa.",
+      "empty": "Ainda nao ha artigos publicados."
+    },
+    "article": {
+      "metaTitle": "Artigo | Energia Renovável Moçambique",
+      "metaDescription": "Leia um artigo publicado pela Energia Renovável Moçambique.",
+      "title": "Artigo",
+      "intro": "Leia o artigo completo.",
+      "missing": "Falta o identificador do artigo.",
+      "notFound": "Artigo nao encontrado.",
+      "backToArticles": "Voltar aos artigos"
+    },
+    "contact": {
+      "metaTitle": "Contacto | Solicitar avaliação ou parceria",
+      "metaDescription": "Contacte a equipa para avaliação de biogás, consulta solar, parceria institucional ou pedido geral.",
+      "title": "Contacte-nos",
+      "intro": "Envie um pedido com a sua localização, necessidades e fase do projecto. Publicaremos telefone, email e endereço apenas depois de verificados.",
+      "whatsappNotice": "O número de WhatsApp Business deve ser confirmado pelo proprietário do projecto antes do lançamento.",
+      "privacyNotice": "Recolhemos apenas dados necessários para responder ao pedido e encaminhar o contacto ao responsável adequado.",
+      "locationTitle": "A nossa localização",
+      "mapTitle": "Mapa da localização",
+      "mapDirections": "Abrir no Google Maps"
+    },
+    "team": {
+      "metaTitle": "A nossa equipa",
+      "metaDescription": "Conheça a nossa equipa, as pessoas e a cultura que orientam o nosso trabalho.",
+      "title": "A nossa equipa",
+      "eyebrow": "As nossas pessoas",
+      "introTitle": "A nossa equipa e cultura",
+      "intro": "Conheça as pessoas por detrás do nosso trabalho.",
+      "empty": "Os perfis da equipa serão publicados em breve.",
+      "error": "Não foi possível carregar a equipa. Tente novamente mais tarde.",
+      "cultureIntro": "Acreditamos na colaboração, na integridade e na aprendizagem contínua. Juntos, trabalhamos para encontrar soluções práticas de energia sustentável para as comunidades que servimos."
+    }
+  }
+}

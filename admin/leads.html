@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Queries and leads | Mozambique Renewable Energy Venture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard" data-admin-page="leads">
+    <header class="admin-topbar">
+        <div>
+            <p class="auth-kicker">Admin</p>
+            <h1>Queries and leads</h1>
+        </div>
+        <div class="admin-session">
+            <nav class="admin-nav" aria-label="Admin navigation">
+                <a href="articles.html">Articles</a>
+                <a href="products.html">Products</a>
+                <a class="active" href="leads.html">Queries</a>
+                <a href="change-password.html">Password</a>
+            </nav>
+            <span id="adminEmail"></span>
+            <a class="btn btn-outline-primary btn-sm" href="../en/contact.html" target="_blank" rel="noopener">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+                View site
+            </a>
+            <button id="logoutButton" class="btn btn-dark btn-sm" type="button">
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                Log out
+            </button>
+        </div>
+    </header>
+
+    <main class="leads-admin-layout">
+        <section class="admin-card lead-notification-card" aria-labelledby="lead-settings-title">
+            <p class="auth-kicker">Notifications</p>
+            <h2 id="lead-settings-title">Query notification email</h2>
+            <p class="admin-help">New website queries will be sent to this address. Email delivery also requires the server’s Resend settings.</p>
+            <form id="leadSettingsForm" class="admin-form compact-form" novalidate>
+                <label for="leadNotificationEmail">Recipient email</label>
+                <input id="leadNotificationEmail" name="notificationEmail" type="email" maxlength="254" autocomplete="email" placeholder="name@example.com">
+                <button class="btn btn-primary" type="submit">Save email setting</button>
+                <p id="leadSettingsStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="admin-card leads-list-card" aria-labelledby="leads-title">
+            <div class="section-heading">
+                <div>
+                    <p class="auth-kicker">Inbox</p>
+                    <h2 id="leads-title">Submitted queries</h2>
+                </div>
+                <button id="refreshLeadsButton" class="btn btn-outline-primary btn-sm" type="button">
+                    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    Refresh
+                </button>
+            </div>
+            <div id="leadsList" class="leads-list" aria-live="polite">Loading queries...</div>
+        </section>
+    </main>
+
+    <script src="../js/config.js" defer></script>
+    <script src="../js/admin.js" defer></script>
+</body>
+</html>

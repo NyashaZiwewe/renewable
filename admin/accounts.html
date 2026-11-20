@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Add administrator | Mozambique Renewable Energy Venture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard" data-admin-page="accounts">
+    <header class="admin-topbar">
+        <h1>Add administrator</h1>
+        <div class="admin-session">
+            <span id="adminEmail"></span>
+            <button id="logoutButton" class="btn btn-dark btn-sm" type="button">Log out</button>
+        </div>
+    </header>
+    <main class="admin-main">
+        <a href="index.html">Back to dashboard</a>
+        <section class="admin-card admin-single-card mt-3" aria-label="New administrator">
+            <form id="adminAccountForm" method="post">
+                <fieldset id="adminAccountFields" class="admin-form compact-form" disabled>
+                    <label for="newAdminEmail">Email address</label>
+                    <input id="newAdminEmail" name="email" type="email" autocomplete="off" maxlength="254" required>
+                    <label for="newAdminPassword">Initial password</label>
+                    <input id="newAdminPassword" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="72" aria-describedby="adminPasswordHelp" required>
+                    <small id="adminPasswordHelp">Use at least 12 characters, including uppercase and lowercase letters and a number.</small>
+                    <label for="confirmAdminPassword">Confirm initial password</label>
+                    <input id="confirmAdminPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="12" maxlength="72" required>
+                    <button class="btn btn-primary mt-3" type="submit">Create administrator</button>
+                </fieldset>
+                <p id="adminAccountStatus" class="form-status mt-3" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <script src="../js/config.js" defer></script>
+    <script src="../js/admin.js?v=admin-accounts" defer></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Partner logos admin | Mozambique Renewable Energy Venture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard" data-admin-page="partners">
+    <header class="admin-topbar">
+        <div>
+            <p class="auth-kicker">Admin</p>
+            <h1>Partner logos</h1>
+        </div>
+        <div class="admin-session">
+            <nav class="admin-nav" aria-label="Admin navigation">
+                <a href="articles.html">Articles</a>
+                <a href="products.html">Products</a>
+                <a href="team.html">Team</a>
+                <a class="active" href="partners.html">Partner logos</a>
+                <a href="leads.html">Queries</a>
+                <a href="change-password.html">Password</a>
+            </nav>
+            <span id="adminEmail"></span>
+            <a class="btn btn-outline-primary btn-sm" href="../en/" target="_blank" rel="noopener">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+                View site
+            </a>
+            <button id="logoutButton" class="btn btn-dark btn-sm" type="button">
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                Log out
+            </button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <a href="index.html">Back to dashboard</a>
+        <p class="mt-3">Partner logos appear above the footer on both language versions. Website links open in a new tab.</p>
+        <div class="row g-4">
+            <section class="col-lg-6"><div class="admin-card">
+                <div class="section-heading"><h2 id="partnerEditorHeading">New partner</h2><button id="newPartner" type="button" class="btn btn-outline-primary">New partner</button></div>
+                <form id="partnerForm" class="admin-form">
+                    <input id="partnerId" type="hidden">
+                    <label for="partnerName">Partner name (logo alternative text)</label><input id="partnerName" name="name" maxlength="160" required>
+                    <label for="partnerLogo">Logo URL</label><input id="partnerLogo" name="logoUrl" maxlength="1000" required>
+                    <label for="partnerFile">Upload logo (JPEG, PNG, GIF or WebP, up to 5 MB)</label><input id="partnerFile" type="file" accept="image/jpeg,image/png,image/gif,image/webp">
+                    <button id="uploadPartnerLogo" type="button" class="btn btn-outline-primary mt-2">Upload logo</button>
+                    <label for="partnerWebsite">Website URL</label><input id="partnerWebsite" name="websiteUrl" type="url" placeholder="https://example.com" maxlength="1000" required>
+                    <button type="submit" class="btn btn-primary mt-3">Save partner</button>
+                    <button id="deletePartner" type="button" class="btn btn-outline-danger mt-3" hidden>Delete partner</button>
+                </form>
+            </div></section>
+            <section class="col-lg-6"><div class="admin-card"><h2>Partner logos</h2><div id="partnersList"></div></div></section>
+        </div>
+        <p id="partnerAdminStatus" role="status" class="mt-3"></p>
+    </main>
+    <script src="../js/config.js" defer></script>
+    <script src="../js/admin.js" defer></script>
+</body>
+</html>
