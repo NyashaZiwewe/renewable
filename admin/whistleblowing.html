@@ -2,80 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Whistleblowing inbox</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/admin.css?v=shared-sidebar">
     <style>
-        main{max-width:1100px;margin:3rem auto;padding:0 1rem}.report{padding:1.25rem;border:1px solid #ddd;border-radius:12px;margin:1rem 0;background:#fff}.report h2{color:#174d3a}.report-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem 1.5rem}.report-details p{margin:0;white-space:pre-wrap}.msg{padding:.8rem 1rem;background:#f1f5f2;margin:.65rem 0;border-radius:10px;white-space:pre-wrap}.msg.admin{background:#e5f1e9}.msg time{display:block;color:#59665e;font-size:.85rem;margin:.25rem 0}.reply{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.reply textarea{flex:1 1 100%;min-height:100px}.issue-actions{display:flex;gap:.7rem;align-items:center;margin:1rem 0}.status-pill{display:inline-block;padding:.25rem .7rem;border-radius:99px;background:#edf2ee}.status-pill.closed{background:#f5e5e5;color:#7c2525}.empty{padding:1rem;background:#f5f7f5;border-radius:8px}
+        .report{padding:1.25rem;border:1px solid #ddd;border-radius:12px;margin:1rem 0;background:#fff}.report h2{color:#174d3a}.report-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem 1.5rem}.report-details p{margin:0;white-space:pre-wrap}.msg{padding:.8rem 1rem;background:#f1f5f2;margin:.65rem 0;border-radius:10px;white-space:pre-wrap}.msg.admin{background:#e5f1e9}.msg time{display:block;color:#59665e;font-size:.85rem;margin:.25rem 0}.reply{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.reply textarea{flex:1 1 100%;min-height:100px}.issue-actions{display:flex;gap:.7rem;align-items:center;margin:1rem 0}.status-pill{display:inline-block;padding:.25rem .7rem;border-radius:99px;background:#edf2ee}.status-pill.closed{background:#f5e5e5;color:#7c2525}.empty{padding:1rem;background:#f5f7f5;border-radius:8px}
     </style>
 </head>
-<body>
-<main>
-    <a href="index.html">Admin home</a>
-    <h1>Whistleblowing inbox</h1>
+<body class="admin-dashboard" data-admin-page="whistleblowing">
+<main class="admin-main">
     <div id="status" role="status">Loading reports…</div>
     <div id="reports"></div>
 </main>
-<script src="../js/config.js"></script>
-<script>
-let csrf='';
-const api=(path,options={})=>{
-    const headers={Accept:'application/json',...(options.headers||{})};
-    if(options.body&&!headers['Content-Type'])headers['Content-Type']='application/json';
-    if(csrf&&options.method&&options.method!=='GET')headers['X-CSRF-Token']=csrf;
-    return fetch(window.apiUrl(path),{...options,headers,credentials:'same-origin'}).then(async response=>{
-        const payload=await response.json().catch(()=>({}));
-        if(!response.ok)throw Error(payload.message||'Request failed (HTTP '+response.status+').');
-        return payload;
-    });
-};
-const timestamp=value=>{
-    const date=new Date(value);
-    return Number.isNaN(date.getTime())?String(value||'Date unavailable'):date.toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});
-};
-function addDetail(root,label,value){
-    const p=document.createElement('p'),strong=document.createElement('strong');
-    strong.textContent=label+': ';p.append(strong,document.createTextNode(value||'Not provided'));root.append(p);
-}
-function renderMessage(message){
-    const item=document.createElement('div');item.className='msg'+(message.from==='admin'?' admin':'');
-    const sender=document.createElement('strong');sender.textContent=message.from==='admin'?'Organization':'Reporter';
-    const time=document.createElement('time');time.dateTime=message.createdAt||'';time.textContent=timestamp(message.createdAt);
-    const body=document.createElement('div');body.textContent=message.body||'';
-    item.append(sender,time,body);return item;
-}
-function renderReport(report){
-    const card=document.createElement('section');card.className='report';
-    const title=document.createElement('h2');title.textContent='Report submitted '+timestamp(report.createdAt);card.append(title);
-    const details=document.createElement('div');details.className='report-details';
-    [['Status',report.status],['Reporter',report.reporterType],['Issue',report.outline],['People involved',report.people],['Time period',report.timePeriod],['Ongoing',report.ongoing],['Evidence links',report.proofLinks],['Information source',report.informationNature],['Previously contacted',report.superiors]].forEach(([label,value])=>addDetail(details,label,value));
-    card.append(details);
-    const actions=document.createElement('div');actions.className='issue-actions';
-    const pill=document.createElement('span');pill.className='status-pill'+(report.status==='closed'?' closed':'');pill.textContent=report.status==='closed'?'Closed':(report.status==='in_progress'?'In progress':'New');actions.append(pill);
-    const toggle=document.createElement('button');toggle.type='button';toggle.className='btn '+(report.status==='closed'?'btn-outline-primary':'btn-outline-danger');toggle.textContent=report.status==='closed'?'Reopen issue':'Close issue';
-    toggle.onclick=async()=>{toggle.disabled=true;try{await api('admin/whistleblowing/'+encodeURIComponent(report.id)+'/status',{method:'PUT',body:JSON.stringify({status:report.status==='closed'?'in_progress':'closed'})});await load()}catch(error){toggle.disabled=false;card.querySelector('.action-status').textContent=error.message}};
-    actions.append(toggle);card.append(actions);
-    const h=document.createElement('h3');h.textContent='Conversation';card.append(h);
-    (report.messages||[]).forEach(message=>card.append(renderMessage(message)));
-    const actionStatus=document.createElement('p');actionStatus.className='action-status';actionStatus.setAttribute('role','status');card.append(actionStatus);
-    if(report.status==='closed'){
-        const note=document.createElement('p');note.className='empty';note.textContent='This issue is closed. Reopen it to continue the conversation.';card.append(note);
-    }else{
-        const form=document.createElement('form');form.className='reply';
-        const field=document.createElement('textarea');field.className='form-control';field.required=true;field.maxLength=3000;field.placeholder='Write a response to the reporter';
-        const send=document.createElement('button');send.className='btn btn-primary';send.textContent='Send response';form.append(field,send);
-        form.onsubmit=async event=>{event.preventDefault();send.disabled=true;try{await api('admin/whistleblowing/'+encodeURIComponent(report.id)+'/messages',{method:'POST',body:JSON.stringify({message:field.value})});await load()}catch(error){actionStatus.textContent=error.message;send.disabled=false}};
-        card.append(form);
-    }
-    return card;
-}
-async function load(){
-    const status=document.querySelector('#status'),root=document.querySelector('#reports');
-    try{const me=await api('admin/me');csrf=me.csrfToken;const payload=await api('admin/whistleblowing');const reports=payload.reports||[];status.textContent=reports.length+' report'+(reports.length===1?'':'s');root.replaceChildren();if(!reports.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='No whistleblowing reports found.';root.append(empty);return;}reports.forEach(report=>root.append(renderReport(report)));}
-    catch(error){status.textContent=error.message;}
-}
-load();
-</script>
+<script src="../js/config.js" defer></script>
+<script src="../js/admin-whistleblowing.js" defer></script>
+<script src="../js/admin.js?v=shared-sidebar" defer></script>
 </body>
 </html>

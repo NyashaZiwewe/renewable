@@ -72,10 +72,16 @@ function request_reset(): never {
 
     $base = rtrim(envv('BASE_URL'), '/');
     $parts = parse_url($base);
+    $transport = envv('RESET_MAIL_TRANSPORT', 'resend');
+    $sender = trim(envv('RESET_EMAIL_FROM', envv('LEAD_EMAIL_FROM')));
+    $mailReady = match ($transport) {
+        'mail' => function_exists('mail') && filter_var($sender, FILTER_VALIDATE_EMAIL) !== false,
+        'resend' => $sender !== '' && envv('RESEND_API_KEY') !== '' && function_exists('curl_init'),
+        default => false,
+    };
     if (!filter_var($base, FILTER_VALIDATE_URL) || !in_array($parts['scheme'] ?? '', ['https', 'http'], true)
         || isset($parts['query']) || isset($parts['fragment']) || isset($parts['user'])
-        || !envv('RESEND_API_KEY') || !envv('RESET_EMAIL_FROM', envv('LEAD_EMAIL_FROM'))
-        || !function_exists('curl_init')) {
+        || !$mailReady) {
         json_response(503, ['message' => 'Password reset email is unavailable. Contact your site administrator.']);
     }
 
@@ -103,7 +109,16 @@ function request_reset(): never {
     }
     if ($recipient !== null) {
         $url = $base . '/admin/reset-password.html?token=' . rawurlencode($token);
-        send_email($recipient, 'Reset your admin password', "Use this link to reset your admin password. It expires in 30 minutes:\n\n{$url}\n", 'RESET_EMAIL_FROM');
+        $subject = 'Reset your admin password';
+        $message = "Use this link to reset your admin password. It expires in 30 minutes:\n\n{$url}\n";
+        if ($transport === 'mail') {
+            $headers = ['From' => $sender, 'Reply-To' => $sender, 'Content-Type' => 'text/plain; charset=UTF-8'];
+            if (!@mail($recipient, $subject, $message, $headers)) {
+                error_log('Password reset email submission failed using PHP mail().');
+            }
+        } else {
+            send_email($recipient, $subject, $message, 'RESET_EMAIL_FROM');
+        }
     }
     json_response(200, ['ok' => true, 'message' => 'If an account exists for that address, you will receive a reset link.']);
 }

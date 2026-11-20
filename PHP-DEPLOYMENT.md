@@ -39,8 +39,16 @@ administrator** using an email address and an initial password. Administrators
 can update their own password from **Admin > Change password**.
 
 For email resets, set `BASE_URL` to the public HTTPS site URL (including any
-installation subdirectory), configure `RESEND_API_KEY`, and set a verified
-`RESET_EMAIL_FROM` or `LEAD_EMAIL_FROM` sender. Enable PHP's cURL extension.
+installation subdirectory). The default transport is Resend. Set
+`RESEND_API_KEY` and a verified `RESET_EMAIL_FROM` or `LEAD_EMAIL_FROM` sender,
+and enable PHP's cURL extension.
+
+If your web host supports outgoing PHP mail, set `RESET_MAIL_TRANSPORT=mail`
+and set `RESET_EMAIL_FROM` to a mailbox address your host allows, such as
+`support@example.com`. Use the bare address for this transport. PHP
+`mail()` reports whether the host accepted the message for sending. Check the
+recipient's inbox and the host's mail logs to verify delivery.
+
 Admins can request a link from **Forgot password?** on the sign-in page.
 Reset links expire after 30 minutes. A successful reset invalidates outstanding
 links and signs the administrator out of all active sessions.

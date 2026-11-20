@@ -166,7 +166,104 @@
         });
     }
 
+    function renderAdminNavigation() {
+        var sections = [
+            { label: "Overview", links: [
+                { page: "home", href: "index.html", label: "Dashboard", icon: "grid" }
+            ] },
+            { label: "Account", links: [
+                { page: "accounts", href: "accounts.html", label: "Add administrator", icon: "person-plus" },
+                { page: "password", href: "change-password.html", label: "Change password", icon: "key" }
+            ] },
+            { label: "Website", links: [
+                { page: "company", href: "company.html", label: "Company settings", icon: "building" },
+                { page: "articles", href: "articles.html", label: "Articles", icon: "newspaper" },
+                { page: "products", href: "products.html", label: "Products", icon: "box-seam" },
+                { page: "team", href: "team.html", label: "Team", icon: "people" },
+                { page: "partners", href: "partners.html", label: "Partner logos", icon: "diagram-3" },
+                { page: "faqs", href: "faqs.html", label: "FAQs", title: "Frequently asked questions", icon: "question-circle" }
+            ] },
+            { label: "Inbox", links: [
+                { page: "leads", href: "leads.html", label: "Queries and leads", icon: "inbox" },
+                { page: "whistleblowing", href: "whistleblowing.html", label: "Whistleblowing", title: "Whistleblowing inbox", icon: "shield-exclamation" }
+            ] }
+        ];
+        var main = document.querySelector("main");
+        main.id = "adminContent";
+        main.tabIndex = -1;
+
+        var layout = document.createElement("div");
+        layout.className = "admin-shell";
+        layout.innerHTML = `
+            <a class="visually-hidden-focusable admin-skip-link" href="#adminContent">Skip to content</a>
+            <header class="admin-topbar">
+                <button type="button" class="btn btn-outline-primary admin-menu-toggle"
+                        aria-controls="adminSidebar" aria-expanded="false">
+                    <i class="bi bi-list" aria-hidden="true"></i> Menu
+                </button>
+                <h1></h1>
+            </header>
+            <aside class="admin-sidebar" id="adminSidebar">
+                <div class="admin-sidebar-brand">
+                    <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                    <span>Renewable Energy <small>Admin dashboard</small></span>
+                </div>
+                <nav class="admin-nav" aria-label="Admin navigation"></nav>
+                <div class="admin-sidebar-footer">
+                    <span id="adminEmail"></span>
+                    <a href="../en/" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> View site
+                    </a>
+                    <button id="logoutButton" type="button">
+                        <i class="bi bi-box-arrow-right" aria-hidden="true"></i> Log out
+                    </button>
+                </div>
+            </aside>`;
+
+        var nav = layout.querySelector("nav");
+        var title = layout.querySelector("h1");
+        sections.forEach(function (section) {
+            var group = document.createElement("div");
+            var heading = document.createElement("p");
+            heading.textContent = section.label;
+            group.appendChild(heading);
+            section.links.forEach(function (item) {
+                var link = document.createElement("a");
+                var icon = document.createElement("i");
+                icon.className = "bi bi-" + item.icon;
+                icon.setAttribute("aria-hidden", "true");
+                link.href = item.href;
+                link.append(icon, document.createTextNode(item.label));
+                if (item.page === page) {
+                    link.setAttribute("aria-current", "page");
+                    title.textContent = item.title || item.label;
+                }
+                group.appendChild(link);
+            });
+            nav.appendChild(group);
+        });
+
+        var toggle = layout.querySelector(".admin-menu-toggle");
+        var sidebar = layout.querySelector(".admin-sidebar");
+        function setMenuOpen(open) {
+            toggle.setAttribute("aria-expanded", String(open));
+            sidebar.classList.toggle("is-open", open);
+        }
+        toggle.addEventListener("click", function () {
+            setMenuOpen(toggle.getAttribute("aria-expanded") === "false");
+        });
+        layout.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true" && toggle.offsetWidth) {
+                setMenuOpen(false);
+                toggle.focus();
+            }
+        });
+        main.before(layout);
+        layout.appendChild(main);
+    }
+
     function initProtectedPage(initializer) {
+        renderAdminNavigation();
         api("/api/admin/me").then(function (payload) {
             state.csrfToken = payload.csrfToken;
             if (byId("adminEmail")) {
@@ -1291,4 +1388,7 @@
     if (page === "products") initProductsPage();
     if (page === "leads") initLeadsPage();
     if (page === "password") initPasswordPage();
+    if (page === "whistleblowing") {
+        initProtectedPage(function () { return window.initWhistleblowingInbox(api); });
+    }
 }());

@@ -158,63 +158,170 @@ h2 {
     color: var(--admin-primary);
 }
 
+.admin-shell {
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "sidebar topbar" "sidebar content";
+    min-height: 100vh;
+}
+
+.admin-shell > main {
+    grid-area: content;
+    min-width: 0;
+}
+
 .admin-topbar {
+    grid-area: topbar;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 22px clamp(16px, 4vw, 44px);
+    gap: 14px;
+    min-height: 80px;
+    padding: 16px clamp(16px, 3vw, 40px);
     background: #fff;
     border-bottom: 1px solid var(--admin-border);
 }
 
-.admin-session {
+.admin-topbar h1 {
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.admin-menu-toggle {
+    display: none;
+}
+
+.admin-skip-link:focus {
+    position: fixed;
+    z-index: 20;
+    top: 8px;
+    left: 8px;
+    padding: 10px 14px;
+    color: var(--admin-primary);
+    background: #fff;
+    border-radius: 6px;
+}
+
+.admin-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    padding: 20px 14px;
+    background: #102e24;
+    color: #f1f7f3;
+    color-scheme: dark;
+}
+
+.admin-sidebar-brand {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     gap: 10px;
-}
-
-.admin-session span {
-    color: var(--admin-muted);
-    font-size: 14px;
-}
-
-.admin-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.admin-nav a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 36px;
-    padding: 6px 10px;
-    color: var(--admin-muted);
-    border-radius: 8px;
-    font-size: 14px;
+    margin: 0 4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ffffff26;
     font-weight: 800;
 }
 
+.admin-sidebar-brand i {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background: #234a3a;
+    color: #a4e2ba;
+}
+
+.admin-sidebar-brand small {
+    display: block;
+    color: #b9d0c3;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.admin-nav {
+    display: grid;
+    gap: 13px;
+}
+
+.admin-nav p {
+    margin: 0 10px 3px;
+    color: #b9d0c3;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.admin-nav a,
+.admin-sidebar-footer a,
+.admin-sidebar-footer button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 38px;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+
 .admin-nav a:hover,
-.admin-nav a:focus,
-.admin-nav a.active {
-    color: var(--admin-primary);
-    background: rgba(22, 106, 67, .1);
+.admin-sidebar-footer a:hover,
+.admin-sidebar-footer button:hover {
+    background: #204233;
+    color: #fff;
+}
+
+.admin-nav a[aria-current="page"] {
+    background: #285741;
+    color: #fff;
+    font-weight: 800;
+}
+
+.admin-sidebar :focus-visible {
+    outline: 2px solid #a4e2ba;
+    outline-offset: 1px;
+}
+
+.admin-sidebar-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #ffffff26;
+}
+
+#adminEmail {
+    display: block;
+    margin: 0 10px 8px;
+    color: #b9d0c3;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+#adminEmail:empty {
+    display: none;
 }
 
 .admin-main {
-    padding: 24px clamp(16px, 4vw, 44px) 40px;
+    padding: 24px clamp(16px, 3vw, 40px) 40px;
 }
 
 .admin-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
     gap: 22px;
-    padding: 24px clamp(16px, 4vw, 44px) 40px;
+    padding: 24px clamp(16px, 3vw, 40px) 40px;
 }
 
 .leads-admin-layout {
@@ -222,7 +329,7 @@ h2 {
     grid-template-columns: minmax(280px, .65fr) minmax(0, 1.35fr);
     align-items: start;
     gap: 22px;
-    padding: 24px clamp(16px, 4vw, 44px) 40px;
+    padding: 24px clamp(16px, 3vw, 40px) 40px;
 }
 
 .admin-help {
@@ -233,7 +340,7 @@ h2 {
 
 .admin-home-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
     gap: 18px;
 }
 
@@ -242,19 +349,19 @@ h2 {
     grid-template-columns: 48px minmax(0, 1fr);
     align-items: center;
     gap: 14px;
-    min-height: 150px;
-    padding: 22px;
+    min-height: 116px;
+    padding: 18px;
     color: var(--admin-text);
     background: #fff;
     border: 1px solid var(--admin-border);
     border-radius: 8px;
-    box-shadow: 0 18px 44px rgba(26, 42, 54, .08);
+    box-shadow: 0 4px 12px rgba(26, 42, 54, .05);
 }
 
 .admin-home-card:hover,
 .admin-home-card:focus {
     color: var(--admin-text);
-    transform: translateY(-2px);
+    border-color: var(--admin-primary);
 }
 
 .admin-home-card i {
@@ -275,7 +382,7 @@ h2 {
 }
 
 .admin-home-card strong {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .admin-home-card small {
@@ -552,15 +659,37 @@ h2 {
     margin-top: 18px;
 }
 
-@media (max-width: 980px) {
-    .admin-topbar,
-    .admin-layout {
-        padding-inline: 16px;
-    }
-
+@media (max-width: 1100px) {
     .admin-layout,
     .leads-admin-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .admin-shell {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas: "topbar" "sidebar" "content";
+    }
+
+    .admin-topbar {
+        min-height: 64px;
+    }
+
+    .admin-menu-toggle {
+        display: inline-flex;
+        flex: 0 0 auto;
+    }
+
+    .admin-sidebar {
+        display: none;
+        position: static;
+        height: auto;
+    }
+
+    .admin-sidebar.is-open {
+        display: flex;
     }
 }
 
@@ -570,15 +699,10 @@ h2 {
         padding: 20px;
     }
 
-    .admin-topbar,
     .section-heading,
     .form-actions {
         align-items: stretch;
         flex-direction: column;
-    }
-
-    .admin-session {
-        justify-content: flex-start;
     }
 
     .form-grid {
