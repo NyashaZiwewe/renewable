@@ -22,17 +22,21 @@
         if (text) node.textContent = text;
         return node;
     }
+    function portraitPlaceholder() {
+        var placeholder = element("div", "team-portrait-placeholder");
+        placeholder.setAttribute("aria-hidden", "true");
+        placeholder.appendChild(element("i", "fa fa-user"));
+        return placeholder;
+    }
+
     function portrait(member) {
-        if (!member.imageUrl) {
-            var placeholder = element("div", "team-portrait-placeholder");
-            placeholder.setAttribute("aria-hidden", "true");
-            placeholder.appendChild(element("i", "fa fa-user"));
-            return placeholder;
-        }
+        if (!member.imageUrl) return portraitPlaceholder();
         var image = element("img", "team-portrait");
-        image.src = window.assetUrl(member.imageUrl);
         image.alt = member.name;
         image.loading = "lazy";
+        image.referrerPolicy = "no-referrer";
+        image.addEventListener("error", function () { image.replaceWith(portraitPlaceholder()); });
+        image.src = window.assetUrl(member.imageUrl);
         return image;
     }
     function renderMember(member) {

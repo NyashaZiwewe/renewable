@@ -238,6 +238,17 @@ h2 {
     color: #a4e2ba;
 }
 
+.admin-sidebar-brand img {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.admin-sidebar-brand [hidden] {
+    display: none;
+}
+
 .admin-sidebar-brand small {
     display: block;
     color: #b9d0c3;

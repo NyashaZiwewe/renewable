@@ -21,6 +21,14 @@ function team_content(string $locale): array {
     return json_decode((string)$raw, true) ?: ['intro' => '', 'members' => []];
 }
 
+function team_editor_content(string $locale, array $content): array {
+    if (trim($content['intro']) === '') {
+        $translations = json_decode((string)@file_get_contents(API_ROOT . '/locales/' . $locale . '/common.json'), true);
+        $content['intro'] = $translations['pages']['team']['cultureIntro'] ?? '';
+    }
+    return $content;
+}
+
 function validate_team_content(array $body): array {
     if (!is_string($body['intro'] ?? null) || preg_match_all('/./us', $body['intro']) > 5000 ||
         !isset($body['members']) || !is_array($body['members']) ||
@@ -31,7 +39,7 @@ function validate_team_content(array $body): array {
     foreach ($body['members'] as $member) {
         if (!is_array($member)) throw new InvalidArgumentException('Enter valid team profiles.');
         $row = [];
-        foreach (['id' => 80, 'name' => 160, 'title' => 160, 'summary' => 5000, 'imageUrl' => 500, 'status' => 20] as $key => $limit) {
+        foreach (['id' => 80, 'name' => 160, 'title' => 160, 'summary' => 5000, 'imageUrl' => 2048, 'status' => 20] as $key => $limit) {
             $value = $member[$key] ?? ($key === 'imageUrl' ? '' : null);
             if (!is_string($value) || preg_match_all('/./us', $value) > $limit) throw new InvalidArgumentException('Invalid or overly long team profile field: ' . $key . '.');
             $row[$key] = trim($value);
@@ -60,5 +68,5 @@ function save_team_content(string $locale): never {
     } elseif (file_put_contents(API_DATA . '/team-' . $locale . '.json', $payload, LOCK_EX) === false) {
         throw new RuntimeException('Unable to save team content.');
     }
-    json_response(200, $content);
+    json_response(200, team_editor_content($locale, $content));
 }

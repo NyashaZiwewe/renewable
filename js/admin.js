@@ -205,7 +205,8 @@
             </header>
             <aside class="admin-sidebar" id="adminSidebar">
                 <div class="admin-sidebar-brand">
-                    <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                    <i class="bi bi-lightning-charge-fill" id="adminBrandIcon" aria-hidden="true"></i>
+                    <img id="adminBrandLogo" alt="" hidden>
                     <span>Renewable Energy <small>Admin dashboard</small></span>
                 </div>
                 <nav class="admin-nav" aria-label="Admin navigation"></nav>
@@ -266,6 +267,7 @@
         renderAdminNavigation();
         api("/api/admin/me").then(function (payload) {
             state.csrfToken = payload.csrfToken;
+            showAdminLogo(payload.logo);
             if (byId("adminEmail")) {
                 byId("adminEmail").textContent = payload.user.email;
             }
@@ -274,6 +276,18 @@
         }).catch(function () {
             window.location.href = "login.html";
         });
+    }
+
+    function showAdminLogo(url) {
+        var logo = byId("adminBrandLogo");
+        var icon = byId("adminBrandIcon");
+        logo.hidden = true;
+        icon.hidden = false;
+        logo.onload = function () { logo.hidden = false; icon.hidden = true; };
+        logo.onerror = function () { logo.hidden = true; icon.hidden = false; };
+        logo.referrerPolicy = "no-referrer";
+        if (url && url !== "#") logo.src = window.assetUrl(url);
+        else logo.removeAttribute("src");
     }
 
     function bindSessionEvents() {
@@ -497,6 +511,7 @@
             }
             function reset() {
                 form.reset();
+                renderImagePreview("", "teamPortraitPreview");
                 byId("teamMemberId").value = "";
                 byId("teamEditorHeading").textContent = "New team member";
                 byId("deleteTeamMember").hidden = true;
@@ -523,6 +538,7 @@
                         form.elements.title.value = member.title;
                         form.elements.summary.value = member.summary;
                         form.elements.imageUrl.value = member.imageUrl;
+                        renderImagePreview(member.imageUrl, "teamPortraitPreview");
                         form.elements.status.value = member.status;
                         byId("teamMemberFile").value = "";
                         byId("teamEditorHeading").textContent = "Edit team member";
@@ -587,6 +603,9 @@
                 if (!busy) save({ intro: intro.value, members: content.members }, "Team introduction saved.");
             });
             byId("newTeamMember").addEventListener("click", reset);
+            form.elements.imageUrl.addEventListener("change", function () {
+                renderImagePreview(form.elements.imageUrl.value, "teamPortraitPreview");
+            });
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
                 if (busy) return;
@@ -610,6 +629,7 @@
                 setStatus(status, "Uploading portrait...");
                 uploadImage(file).then(function (result) {
                     form.elements.imageUrl.value = result.url;
+                    renderImagePreview(result.url, "teamPortraitPreview");
                     setStatus(status, "Portrait uploaded. Save the member to apply it.");
                 }).catch(function (error) { setStatus(status, error.message, "error"); })
                     .finally(function () { lock(false); render(); });
@@ -622,9 +642,11 @@
         initProtectedPage(function () {
             var form = byId("companyForm"), status = byId("companyStatus");
             var uploadButton = byId("uploadCompanyLogo"), saveButton = form.querySelector('[type="submit"]');
+            var logoFile = byId("companyLogoFile");
             var savedLogo;
             function lock(locked) {
                 uploadButton.disabled = saveButton.disabled = locked;
+                logoFile.disabled = locked;
                 form.elements.logo.disabled = locked;
             }
             lock(true);
@@ -639,13 +661,23 @@
                     input.classList.add("is-invalid");
                 }
             }
+            function uploadLogo(file) {
+                setStatus(status, "Uploading logo...");
+                return uploadImage(file).then(function (result) {
+                    form.elements.logo.value = result.url;
+                    logoFile.value = "";
+                    renderImagePreview(result.url, "companyLogoPreview");
+                    return result.url;
+                });
+            }
+            form.elements.logo.addEventListener("change", function () {
+                renderImagePreview(form.elements.logo.value, "companyLogoPreview");
+            });
             uploadButton.addEventListener("click", function () {
-                var file = byId("companyLogoFile").files[0];
+                var file = logoFile.files[0];
                 if (!file) { setStatus(status, "Choose a logo image first.", "error"); return; }
                 lock(true);
-                setStatus(status, "Uploading logo...");
-                uploadImage(file).then(function (result) {
-                    form.elements.logo.value = result.url;
+                uploadLogo(file).then(function () {
                     setStatus(status, "Logo uploaded. Save company settings to apply it.");
                 }).catch(showCompanyError).finally(function () { lock(false); });
             });
@@ -653,18 +685,25 @@
                 event.preventDefault();
                 if (saveButton.disabled) return;
                 var settings = formJson(form);
-                if (settings.logo === savedLogo) delete settings.logo;
+                var file = logoFile.files[0];
                 lock(true);
                 form.querySelectorAll('[aria-invalid="true"]').forEach(function (input) {
                     input.removeAttribute("aria-invalid");
                     input.classList.remove("is-invalid");
                 });
                 status.setAttribute("role", "status");
-                setStatus(status, "Saving...");
-                api("/api/admin/company-settings", {method: "PUT", body: JSON.stringify(settings)})
+                var logoReady = file ? uploadLogo(file) : Promise.resolve(settings.logo);
+                logoReady.then(function (url) {
+                    if (url === savedLogo) delete settings.logo;
+                    else settings.logo = url;
+                    setStatus(status, "Saving...");
+                    return api("/api/admin/company-settings", {method: "PUT", body: JSON.stringify(settings)});
+                })
                     .then(function (result) {
                         savedLogo = result.settings.logo;
                         form.elements.logo.value = savedLogo;
+                        renderImagePreview(savedLogo, "companyLogoPreview");
+                        showAdminLogo(savedLogo);
                         setStatus(status, "Company settings saved.", "success");
                     })
                     .catch(showCompanyError)
@@ -673,6 +712,8 @@
             return api("/api/admin/company-settings").then(function (result) {
                 Object.keys(result.settings).forEach(function (key) { if (form.elements[key]) form.elements[key].value = result.settings[key]; });
                 savedLogo = form.elements.logo.value;
+                renderImagePreview(savedLogo, "companyLogoPreview");
+                showAdminLogo(savedLogo);
                 lock(false);
             }).catch(showCompanyError);
         });
@@ -684,9 +725,23 @@
 
     function initArticlesPage() {
         initProtectedPage(function () {
-            bindArticleEvents();
-            return initRichEditor().then(loadArticles);
+            return loadArticleEditor().then(function () {
+                bindArticleEvents();
+                return loadArticles();
+            });
         });
+    }
+
+    function loadArticleEditor() {
+        if (window.ClassicEditor) return initRichEditor();
+
+        return new Promise(function (resolve) {
+            var script = document.createElement("script");
+            script.src = "https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js";
+            script.addEventListener("load", resolve);
+            script.addEventListener("error", resolve);
+            document.head.appendChild(script);
+        }).then(initRichEditor);
     }
 
     function initProductsPage() {
@@ -786,7 +841,7 @@
     ArticleUploadAdapter.prototype.upload = function () {
         return this.loader.file.then(function (file) {
             return uploadImage(file).then(function (payload) {
-                return { default: payload.url };
+                return { default: window.assetUrl(payload.url) };
             });
         });
     };
@@ -839,18 +894,24 @@
     }
 
     function renderImagePreview(url, previewId) {
+        url = String(url || "").trim();
         var preview = byId(previewId || "imagePreview");
+        if (!preview) return;
         preview.innerHTML = "";
-        preview.classList.toggle("has-image", Boolean(url));
-        if (!url) return;
+        preview.classList.toggle("has-image", Boolean(url && url !== "#"));
+        if (!url || url === "#") return;
 
         var image = document.createElement("img");
-        image.src = window.assetUrl(url);
         image.alt = "";
-        image.loading = "lazy";
+        image.referrerPolicy = "no-referrer";
 
         var label = document.createElement("span");
         label.textContent = url;
+        image.addEventListener("error", function () {
+            image.hidden = true;
+            label.textContent = "Image unavailable. Check that the URL opens the image directly.";
+        });
+        image.src = window.assetUrl(url);
 
         preview.appendChild(image);
         preview.appendChild(label);

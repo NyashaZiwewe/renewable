@@ -228,11 +228,18 @@ ${body}
     <script src="../js/config.js" defer></script>
     <script src="../js/site-i18n.js${pageKey === "faq" ? "?v=faqs" : ""}" defer></script>
     ${["articles", "article"].includes(pageKey) ? `<script src="../js/articles.js" defer></script>` : ""}
-    ${pageKey === "team" ? `<script src="../js/team.js" defer></script>` : ""}
+    ${pageKey === "team" ? `<script src="../js/team.js?v=20261123-images" defer></script>` : ""}
     ${pageKey === "products" ? `<script src="../js/products.js" defer></script>` : ""}
 </body>
 </html>
 `;
+}
+
+function whistleHref(locale, page = "overview") {
+  const paths = locale === "pt"
+    ? { overview: "denuncias.html", submit: "nova-denuncia.html", followup: "acompanhar-denuncia.html" }
+    : { overview: "../whistleblowing.html", submit: "../whistleblowing-submit.html", followup: "../whistleblowing-followup.html" };
+  return paths[page];
 }
 
 function writeSharedPartials() {
@@ -334,11 +341,11 @@ function renderNav(locale) {
                 </div>
                 ${navItem(locale, "contact", "nav.contact")}
                 <div class="nav-item dropdown">
-                    <a href="../whistleblowing.html" class="nav-link dropdown-toggle" data-nav-parent="whistleblowing" data-bs-toggle="dropdown" data-i18n="nav.whistleblowing">${escapeHtml(text(locale, "nav.whistleblowing"))}</a>
+                    <a href="${whistleHref(locale)}" class="nav-link dropdown-toggle" data-nav-parent="whistleblowing" data-bs-toggle="dropdown" data-i18n="nav.whistleblowing">${escapeHtml(text(locale, "nav.whistleblowing"))}</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="../whistleblowing.html" class="dropdown-item" data-i18n="nav.whistleblowingOverview">${escapeHtml(text(locale, "nav.whistleblowingOverview"))}</a>
-                        <a href="../whistleblowing-submit.html" class="dropdown-item" data-i18n="nav.whistleblowingNew">${escapeHtml(text(locale, "nav.whistleblowingNew"))}</a>
-                        <a href="../whistleblowing-followup.html" class="dropdown-item" data-i18n="nav.whistleblowingFollowUp">${escapeHtml(text(locale, "nav.whistleblowingFollowUp"))}</a>
+                        <a href="${whistleHref(locale)}" class="dropdown-item" data-i18n="nav.whistleblowingOverview">${escapeHtml(text(locale, "nav.whistleblowingOverview"))}</a>
+                        <a href="${whistleHref(locale, "submit")}" class="dropdown-item" data-i18n="nav.whistleblowingNew">${escapeHtml(text(locale, "nav.whistleblowingNew"))}</a>
+                        <a href="${whistleHref(locale, "followup")}" class="dropdown-item" data-i18n="nav.whistleblowingFollowUp">${escapeHtml(text(locale, "nav.whistleblowingFollowUp"))}</a>
                     </div>
                 </div>
             </div>
@@ -399,7 +406,7 @@ function renderFooter(locale) {
                     <a class="btn btn-link" href="${localHref(locale, "who")}" data-i18n="nav.who">${escapeHtml(text(locale, "nav.who"))}</a>
                     <a class="btn btn-link" href="${localHref(locale, "partnerships")}" data-i18n="nav.partnerships">${escapeHtml(text(locale, "nav.partnerships"))}</a>
                     <a class="btn btn-link" href="${localHref(locale, "contact")}" data-i18n="nav.contact">${escapeHtml(text(locale, "nav.contact"))}</a>
-                    <a class="btn btn-link" href="../whistleblowing.html" data-i18n="nav.whistleblowing">${escapeHtml(text(locale, "nav.whistleblowing"))}</a>
+                    <a class="btn btn-link" href="${whistleHref(locale)}" data-i18n="nav.whistleblowing">${escapeHtml(text(locale, "nav.whistleblowing"))}</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4" data-i18n="footer.solutions">${escapeHtml(text(locale, "footer.solutions"))}</h5>

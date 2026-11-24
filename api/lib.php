@@ -136,7 +136,12 @@ function require_admin(): array { $cookie=$_COOKIE['admin_session']??'';if($cook
 function csrf_check(array $session): void { $given=$_SERVER['HTTP_X_CSRF_TOKEN']??'';if($given===''||!hash_equals((string)$session['csrfToken'],$given))json_response(403,['error'=>'csrf_failed','message'=>'Security check failed. Refresh and try again.']); }
 function safe_image(string $url): bool { return preg_match('~^https?://~i',$url)===1||str_starts_with($url,'/img/')||str_starts_with($url,'../img/')||preg_match('~^/[^/]+/img/~',$url)===1; }
 function normalize_properties(mixed $items): array { if(!is_array($items))return []; $out=[];foreach($items as $p){if(!is_array($p))continue;$key=clean((string)($p['key']??''),80);$value=clean((string)($p['value']??''),200);if($key!==''||$value!=='')$out[]=['key'=>$key,'value'=>$value];}return $out; }
-function slugify(string $v): string { $v=iconv('UTF-8','ASCII//TRANSLIT//IGNORE',$v)?:$v;$v=strtolower($v);return substr(trim(preg_replace('/[^a-z0-9]+/','-', $v),'-'),0,120); }
+function slugify(string $value): string {
+    if (function_exists('iconv')) {
+        $value = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value) ?: $value;
+    }
+    return substr(trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($value)), '-'), 0, 120);
+}
 function sanitize_article(string $html): string {
     $allowed=['p','br','strong','b','em','i','u','s','a','ul','ol','li','blockquote','h2','h3','h4','figure','figcaption','img','table','thead','tbody','tfoot','tr','th','td','hr','span'];
     if(!class_exists(DOMDocument::class)) return strip_tags($html);
@@ -216,14 +221,17 @@ function api_dispatch(): never {
         if($method==='POST'&&$path==='/api/admin/reset-password'){reset_password();}
         if(!str_starts_with($path,'/api/admin/'))json_response(404,['error'=>'not_found','message'=>'Endpoint not found.']);
         $auth=require_admin();$session=$auth['session'];$user=$auth['user'];
-        if($method==='GET'&&$path==='/api/admin/me')json_response(200,['user'=>['email'=>$user['email']],'csrfToken'=>$session['csrfToken']]);
+        if($method==='GET'&&$path==='/api/admin/me')json_response(200,['user'=>['email'=>$user['email']],'csrfToken'=>$session['csrfToken'],'logo'=>company_settings()['logo']]);
         if($method==='GET'&&$path==='/api/admin/articles')json_response(200,['articles'=>sorted_newest(read_store('articles'))]);
         if($method==='GET'&&$path==='/api/admin/products')json_response(200,['products'=>sorted_newest(read_store('products'))]);
         if($method==='GET'&&$path==='/api/admin/whistleblowing')json_response(200,['reports'=>array_map('public_whistle_report',sorted_newest(whistle_reports()))]);
         if($method==='GET'&&$path==='/api/admin/leads'){$leads=array_map(function($l){$l['subject']=clean((string)($l['subject']??$l['formName']??'Website query'),200);$l['status']=lead_status($l['status']??'new');return $l;},sorted_newest(read_store('leads')));json_response(200,['leads'=>$leads]);}
         if($method==='GET'&&$path==='/api/admin/lead-settings')json_response(200,['notificationEmail'=>db_setting_get()]);
         if($method==='GET'&&$path==='/api/admin/company-settings')json_response(200,['settings'=>company_settings()]);
-        if($method==='GET'&&$path==='/api/admin/team')json_response(200,team_content(team_locale()));
+        if($method==='GET'&&$path==='/api/admin/team'){
+            $locale=team_locale();
+            json_response(200,team_editor_content($locale,team_content($locale)));
+        }
         if($method==='GET'&&$path==='/api/admin/partners')json_response(200,partner_content());
         if(in_array($method,['POST','PUT','DELETE'],true))csrf_check($session);
         if(in_array($method,['GET','POST'],true)&&$path==='/api/admin/faqs')faq_request($method);
@@ -319,7 +327,10 @@ function create_whistle_report(): never {
     if($to){try{send_email($to,'New whistleblowing report','A confidential report was submitted. Sign in to the admin panel to review it.');}catch(Throwable $e){error_log('Whistleblowing notification failed: '.$e->getMessage());}}else{error_log('Whistleblowing notification skipped: no recipient configured.');}
     $emailSent=false;
     if($email){
-        try{$emailSent=send_email($email,'Your whistleblowing token',"Keep this token safe for follow-up: {$secret}",'LEAD_EMAIL_FROM');}
+        $portuguese=($b['locale']??'en')==='pt';
+        $subject=$portuguese?'Código de acompanhamento da sua denúncia':'Your whistleblowing token';
+        $text=$portuguese?"Guarde este código num local seguro para acompanhar a sua denúncia: {$secret}":"Keep this token safe for follow-up: {$secret}";
+        try{$emailSent=send_email($email,$subject,$text,'LEAD_EMAIL_FROM');}
         catch(Throwable $e){error_log('Whistleblowing token email failed: '.$e->getMessage());}
     }
     json_response(201,['ok'=>true,'token'=>$secret,'emailSent'=>$emailSent]);
@@ -350,6 +361,39 @@ function normalize_product(array $b,?array $old,string $email): array { $now=now
 function normalize_price(mixed $v): ?float { $s=str_replace(',','',trim((string)($v??'')));if($s===''||!is_numeric($s))return null;return round((float)$s,2); }
 function save_product(?string $id,array $user): never { $b=body_json();$rows=read_store('products');$idx=null;$old=null;foreach($rows as $i=>$p)if($p['id']===$id&&$id!==null){$idx=$i;$old=$p;break;}if($id!==null&&$old===null)json_response(404,['error'=>'not_found','message'=>'Product not found.']);$p=normalize_product($b,$old,$user['email']);$error='';if(mb_strlen($p['name'])<2)$error='Product name is required.';elseif(mb_strlen($p['description'])<10)$error='Product description must be at least 10 characters.';elseif(!in_array($p['locale'],['en','pt'],true))$error='Locale must be English or Portuguese.';elseif(!in_array($p['currency'],['MZN','USD'],true))$error='Currency must be MZN or USD.';elseif(count($p['properties'])>5)$error='A product can have at most five properties.';elseif($p['price']===null||$p['price']<0)$error='Current price must be 0 or greater.';elseif($p['oldPrice']!==null&&$p['oldPrice']<0)$error='Old price must be 0 or greater.';elseif($p['imageUrl']&&!safe_image($p['imageUrl']))$error='Image URL must be an http(s) URL or a local /img path.';else{$keys=[];foreach($p['properties'] as $prop){if(!$prop['key']||!$prop['value']){$error='Each property needs both a name and a value.';break;}$key=mb_strtolower($prop['key']);if(isset($keys[$key])){$error='Property names must be unique.';break;}$keys[$key]=true;}}if($error)json_response(400,['error'=>'invalid_product','message'=>$error]);if($idx===null)$rows[]=$p;else$rows[$idx]=$p;write_store('products',$rows);json_response($id?200:201,['product'=>$p]); }
 function delete_record(string $name,string $id): never { $rows=read_store($name);$next=array_values(array_filter($rows,fn($r)=>$r['id']!==$id));if(count($rows)===count($next))json_response(404,['error'=>'not_found','message'=>ucfirst(rtrim($name,'s')).' not found.']);write_store($name,$next);json_response(200,['ok'=>true]); }
-function upload_image(): never { if(empty($_FILES))json_response(400,['uploaded'=>0,'error'=>'invalid_upload','message'=>'Choose an image to upload.']);$f=$_FILES['upload']??$_FILES['image']??$_FILES['file']??null;if(!$f||$f['error']!==UPLOAD_ERR_OK)json_response(400,['uploaded'=>0,'error'=>'invalid_upload','message'=>'Image upload failed.']);if($f['size']>MAX_UPLOAD_BYTES)json_response(413,['uploaded'=>0,'error'=>'invalid_upload','message'=>'Image must be 5 MB or smaller.']);$mime=(new finfo(FILEINFO_MIME_TYPE))->file($f['tmp_name']);$ext=['image/jpeg'=>'.jpg','image/png'=>'.png','image/gif'=>'.gif','image/webp'=>'.webp'][$mime]??'';if(!$ext||!@getimagesize($f['tmp_name']))json_response(415,['uploaded'=>0,'error'=>'invalid_upload','message'=>'Image must be JPEG, PNG, GIF or WebP.']);$base=slugify(pathinfo((string)$f['name'],PATHINFO_FILENAME));$name=gmdate('Y-m-d').'-'.uuid().'-'.substr($base?:'article-image',0,60).$ext;$dir=API_ROOT.'/img/uploads/articles';if(!is_dir($dir))mkdir($dir,0755,true);if(!move_uploaded_file($f['tmp_name'],$dir.'/'.$name))json_response(500,['uploaded'=>0,'error'=>'invalid_upload','message'=>'Image upload failed.']);$prefix=rtrim(dirname(dirname($_SERVER['SCRIPT_NAME']??'/api/index.php')),'/.');json_response(201,['uploaded'=>1,'fileName'=>$name,'url'=>$prefix.'/img/uploads/articles/'.$name]); }
+function upload_image(): never {
+    $file = $_FILES['upload'] ?? $_FILES['image'] ?? $_FILES['file'] ?? null;
+    $error = $file['error'] ?? UPLOAD_ERR_NO_FILE;
+    if ($error === UPLOAD_ERR_NO_FILE) {
+        json_response(400, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'Choose an image to upload.']);
+    }
+    if (in_array($error, [UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE], true) || ($file['size'] ?? 0) > MAX_UPLOAD_BYTES) {
+        json_response(413, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'Image must be 5 MB or smaller and within the server upload limit.']);
+    }
+    if ($error !== UPLOAD_ERR_OK) {
+        json_response(400, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'Image upload failed.']);
+    }
+
+    $mime = (new finfo(FILEINFO_MIME_TYPE))->file($file['tmp_name']);
+    $extension = ['image/jpeg' => '.jpg', 'image/png' => '.png', 'image/gif' => '.gif', 'image/webp' => '.webp'][$mime] ?? '';
+    if (!$extension || !@getimagesize($file['tmp_name'])) {
+        json_response(415, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'Image must be JPEG, PNG, GIF or WebP.']);
+    }
+
+    $base = slugify(pathinfo((string)$file['name'], PATHINFO_FILENAME));
+    $name = gmdate('Y-m-d') . '-' . uuid() . '-' . substr($base ?: 'image', 0, 60) . $extension;
+    $imagePath = '/img/uploads/articles';
+    $directory = API_ROOT . $imagePath;
+    $destination = $directory . '/' . $name;
+    if ((!is_dir($directory) && !@mkdir($directory, 0755, true) && !is_dir($directory)) ||
+        !@move_uploaded_file($file['tmp_name'], $destination)) {
+        json_response(500, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'The server could not save the image to the uploads directory.']);
+    }
+    if (!chmod($destination, 0644)) {
+        unlink($destination);
+        json_response(500, ['uploaded' => 0, 'error' => 'invalid_upload', 'message' => 'The server could not make the uploaded image readable.']);
+    }
+    json_response(201, ['uploaded' => 1, 'fileName' => $name, 'url' => $imagePath . '/' . $name]);
+}
 
 if (PHP_SAPI !== 'cli' && basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'lib.php') json_response(404,['error'=>'not_found','message'=>'Endpoint not found.']);

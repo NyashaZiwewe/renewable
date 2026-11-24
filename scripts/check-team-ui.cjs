@@ -14,13 +14,19 @@ class Node {
 (async()=>{
  for(const locale of ['en','pt']){
   const mount=new Node(),intro=new Node(),body=new Node();body.attrs['data-locale']=locale;mount.attrs['data-empty']='Empty';mount.attrs['data-error']='Error';
-  const members=[{id:'a',name:'Alice Example',title:'Director',summary:'Alice professional summary.\nSecond paragraph.',imageUrl:''},{id:'b',name:'Bob <script>',title:'Engineer',summary:'Bob professional summary.',imageUrl:'/img/bob.jpg'}];
+  const members=[{id:'a',name:'Alice Example',title:'Director',summary:'Alice professional summary.\nSecond paragraph.',imageUrl:''},{id:'b',name:'Bob <script>',title:'Engineer',summary:'Bob professional summary.',imageUrl:'https://example.test/bob.jpg?size=300'}];
   const document={body,querySelector:s=>s==='[data-team-list]'?mount:intro,createElement:t=>new Node(t)};
   const window={apiUrl:p=>p,assetUrl:p=>p};
   const context={document,window,fetch:async()=>({ok:true,json:async()=>({intro:'Team culture intro',members})})};
   vm.runInNewContext(fs.readFileSync(require('path').join(__dirname, '../js/team.js'),'utf8'),context);
   await new Promise(resolve=>setImmediate(resolve));
   assert.equal(intro.textContent,'Team culture intro');assert.equal(mount.children.length,2);
+  const portrait=mount.children[1].children[0];
+  assert.equal(portrait.src,members[1].imageUrl);
+  assert.equal(portrait.referrerPolicy,'no-referrer');
+  portrait.replaceWith=node=>{mount.children[1].children[0]=node;};
+  portrait.events.error();
+  assert.equal(mount.children[1].children[0].className,'team-portrait-placeholder');
   const button=mount.children[1].children[1].children[2];
   assert.equal(button.textContent,locale==='pt'?'Ver mais':'View more');
   button.events.click();
